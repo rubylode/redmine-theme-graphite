@@ -1,0 +1,746 @@
+/* Graphite, a theme for Redmine 7
+ * Copyright (C) 2026  Nick Gorbikoff
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
+
+
+@import url(/application.css);
+
+/* 1. Light tokens.
+ * Redmine 7 takes its colours from the Open Color palette (--oc-gray-0 to -9, and the same ramps for each hue, each with an
+ * -rgb twin) plus a few --color-* names. Remapping those variables recolours most of the application. */
+:root {
+  --fonts-main: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --oc-white: #f7f4ea;
+  --oc-gray-0: #efebe0;
+  --oc-gray-1: #e9e4d6;
+  --oc-gray-2: #e2dccb;
+  --oc-gray-3: #d3ccb7;
+  --oc-gray-4: #bdb59c;
+  --oc-gray-5: #5f5b51;
+  --oc-gray-6: #55514a;
+  --oc-gray-7: #444139;
+  --oc-gray-8: #35332e;
+  --oc-gray-9: #1f1e1b;
+  --oc-gray-9-rgb: 31, 30, 27;
+  --graphite-accent-0: #e6ecf5;
+  --graphite-accent-1: #d3deee;
+  --graphite-accent-2: #b8c9e3;
+  --graphite-accent-3: #8ea8cf;
+  --graphite-accent-4: #6b8bbf;
+  --graphite-accent-5: #4f6fa6;
+  --graphite-accent-6: #3d5c92;
+  --graphite-accent-7: #2e4a7d;
+  --graphite-accent-8: #223a65;
+  --graphite-accent-9: #1b2f52;
+  --oc-blue-0: var(--graphite-accent-0);
+  --oc-blue-1: var(--graphite-accent-1);
+  --oc-blue-2: var(--graphite-accent-2);
+  --oc-blue-3: var(--graphite-accent-3);
+  --oc-blue-4: var(--graphite-accent-4);
+  --oc-blue-5: var(--graphite-accent-5);
+  --oc-blue-6: var(--graphite-accent-6);
+  --oc-blue-7: var(--graphite-accent-7);
+  --oc-blue-8: var(--graphite-accent-8);
+  --oc-blue-9: var(--graphite-accent-7);
+  --oc-blue-1-rgb: 211, 222, 238;
+  --oc-blue-7-rgb: 46, 74, 125;
+  --oc-indigo-0: var(--graphite-accent-0);
+  --oc-indigo-1: var(--graphite-accent-1);
+  --oc-indigo-5: var(--graphite-accent-5);
+  --oc-indigo-9: var(--graphite-accent-9);
+  --color-top-menu-background: #f1ede2;
+  --color-header-background: #f1ede2;
+  --graphite-page: #f1ede2;
+  --graphite-radius: 6px;
+  --graphite-rail: #eee9dd;
+  --graphite-rail-width: 236px;
+  --graphite-rail-ink: #2f2d29;
+  --graphite-rail-ink-strong: #111111;
+  --graphite-rail-dim: #5f5b51;
+  --graphite-rail-hover: rgba(40, 38, 34, 0.08);
+  --graphite-rail-selected: repeating-linear-gradient(135deg, rgba(40, 38, 34, 0.2) 0 1px, transparent 1px 5px);
+  --graphite-rail-selected-ink: #111111;
+  --graphite-rail-line: #4a4843;
+  --graphite-rail-field: #f7f4ea;
+  --graphite-rail-field-line: #4a4843;
+  --graphite-phone-menu: #2b2a27;
+  --graphite-phone-menu-ink: #e8e3d4;
+  --graphite-shadow: rgba(60, 50, 30, 0.25);
+  --graphite-hand: "Segoe Print", "Bradley Hand", "Chalkboard SE", "Marker Felt", "Comic Sans MS", cursive;
+  --graphite-ink: #1f1e1b;
+  --graphite-red: #b2432f;
+  --graphite-grain: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22320%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%223%22%20seed%3D%223%22%2F%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.32%200%200%200%200%20.27%200%200%200%20.55%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22320%22%20height%3D%22320%22%20filter%3D%22url%28%23n%29%22%2F%3E%3C%2Fsvg%3E");
+  --graphite-scribble: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%2210%22%20viewBox%3D%220%200%20240%2010%22%3E%3Cpath%20d%3D%22M2%206%20C30%202%2060%209%2092%205%20S160%202%20190%206%20S228%204%20238%205%22%20fill%3D%22none%22%20stroke%3D%22%233a3935%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.75%22%2F%3E%3Cpath%20d%3D%22M6%208%20C50%206%20110%209%20170%207%20S220%208%20236%207%22%20fill%3D%22none%22%20stroke%3D%22%233a3935%22%20stroke-width%3D%221%22%20opacity%3D%22.5%22%2F%3E%3C%2Fsvg%3E");
+  --graphite-tick: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M4%2013%20C7%2015%208%2017%209.5%2019%20C12%2012%2016%207%2021%203%22%20fill%3D%22none%22%20stroke%3D%22%232a2a2a%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  --graphite-tape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2226%22%3E%3Crect%20width%3D%2296%22%20height%3D%2226%22%20fill%3D%22%23d6c48c%22%20opacity%3D%22.7%22%2F%3E%3C%2Fsvg%3E");
+  --graphite-hatch: repeating-linear-gradient(135deg, rgba(40, 38, 34, 0.22) 0 1px, transparent 1px 5px);
+  --graphite-blend: multiply;
+  --graphite-grain-opacity: 0.9;
+}
+
+/* 2. Dark tokens: see the one block at the end of this file. */
+
+body { color: var(--oc-gray-9); background: var(--graphite-page); }
+a:hover, a:active { color: var(--graphite-accent-8); text-decoration: underline; }
+#wrapper { background: var(--graphite-page); }
+
+/* 3. Layout shell: top bar, project header, menu, sidebar. */
+nav.top-menu {
+  background: var(--color-top-menu-background);
+  color: var(--oc-gray-6);
+  min-block-size: 40px;
+  padding-inline: 20px;
+  border-block-end: 1px solid var(--oc-gray-3);
+}
+.top-menu__links a, .top-menu__links a:link, .top-menu__links a:visited, #account .dropdown-trigger {
+  color: var(--oc-gray-7);
+  border-radius: var(--graphite-radius);
+  padding-block: 4px;
+  padding-inline: 10px;
+}
+.top-menu__links a:hover, #account .dropdown-trigger:hover {
+  color: var(--oc-gray-9);
+  background-color: var(--graphite-accent-0);
+}
+.top-menu__links svg.icon-svg, #account .dropdown-trigger .icon-svg { stroke: var(--oc-gray-7); }
+.top-menu__links a:hover svg.icon-svg, #account .dropdown-trigger:hover .icon-svg { stroke: var(--oc-gray-9); }
+
+#header {
+  background: var(--graphite-page);
+  color: var(--oc-gray-9);
+  padding-inline: 20px;
+  border-block-end: 1px solid var(--oc-gray-3);
+}
+#header a { color: var(--oc-gray-7); }
+#header a:hover { color: var(--oc-gray-9); }
+#header h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.015em; }
+#header h1 .breadcrumbs { color: var(--oc-gray-6); letter-spacing: 0; }
+#quick-search #q {
+  border-radius: var(--graphite-radius);
+  border-color: var(--oc-gray-4);
+  background: var(--oc-gray-0);
+  padding-inline: 12px;
+  inline-size: 180px;
+  block-size: 30px;
+}
+#quick-search form label { color: var(--oc-gray-6); }
+
+/* Phones: Redmine hides the project name and shows a menu button in a 64px bar, and slides the menus in from the right. */
+body .flyout-menu { background-color: var(--graphite-phone-menu); }
+body .flyout-menu h3 { background-color: rgba(255, 255, 255, 0.07); border-block-color: var(--graphite-phone-menu); color: var(--graphite-phone-menu-ink); }
+body #header #project-jump .drdn-trigger { color: var(--oc-gray-8); }
+body #header a.mobile-toggle-button { color: var(--oc-gray-7); }
+body #header { border-block-end: 1px solid var(--oc-gray-3); }
+
+#main-menu { background: transparent; padding-inline: 14px; }
+#main-menu li a {
+  color: var(--oc-gray-6);
+  padding-block: 8px 6px;
+  border-radius: var(--graphite-radius) var(--graphite-radius) 0 0;
+}
+#main-menu li a:hover { background: var(--graphite-accent-0); color: var(--oc-gray-9); }
+#main-menu li a.selected, #main-menu li a.selected:hover {
+  background: transparent;
+  color: var(--graphite-accent-8);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--graphite-accent-6);
+}
+#main-menu li a.new-object, #main-menu li a.new-object:hover {
+  background: var(--graphite-accent-7);
+  color: #fff;
+  border-radius: var(--graphite-radius);
+  box-shadow: none;
+}
+
+/* On wide screens all navigation lives in a light left sidebar: the title, search and project jump, the general links, the project
+ * menu (or the administration menu) and, at the bottom, the profile. Plain CSS: the header's and the top menu's children become
+ * grid items of the page wrapper. Narrower screens, and the login page, keep Redmine's own arrangement. */
+@media (min-width: 1100px) {
+  body:not(.controller-account) #wrapper {
+    display: grid;
+    grid-template-columns: var(--graphite-rail-width) minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto 1fr auto;
+    grid-template-areas:
+      "brand   main"
+      "search  main"
+      "general main"
+      "menu    main"
+      "filler  main"
+      "profile footer";
+    background: linear-gradient(
+      to right,
+      var(--graphite-rail) calc(var(--graphite-rail-width) - 1px),
+      var(--graphite-rail-line) calc(var(--graphite-rail-width) - 1px) var(--graphite-rail-width),
+      var(--graphite-page) var(--graphite-rail-width)
+    );
+  }
+  body:not(.controller-account) #header, body:not(.controller-account) nav.top-menu { display: contents; }
+
+  body:not(.controller-account) #header h1 {
+    grid-area: brand;
+    background: var(--graphite-rail);
+    color: var(--graphite-rail-ink-strong);
+    padding: 16px 18px 12px;
+    min-block-size: 0;
+    justify-content: center;
+  }
+  body:not(.controller-account) #header h1 .breadcrumbs, body:not(.controller-account) #header h1 .breadcrumbs a { color: var(--graphite-rail-dim); }
+  body:not(.controller-account) #header h1 a { color: var(--graphite-rail-ink-strong); }
+
+  /* Search and project jump, stacked. */
+  body:not(.controller-account) #quick-search {
+    grid-area: search;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    min-block-size: 0;
+    padding: 0 12px 12px;
+    background: var(--graphite-rail);
+  }
+  body:not(.controller-account) #quick-search form { display: flex; flex-direction: column; gap: 4px; margin: 0; }
+  body:not(.controller-account) #quick-search form label { margin: 0; font-size: 0.75rem; color: var(--graphite-rail-dim); }
+  body:not(.controller-account) #quick-search form label a { color: var(--graphite-rail-dim); }
+  body:not(.controller-account) #quick-search #q {
+    inline-size: 100%;
+    background: var(--graphite-rail-field);
+    border: 1px solid var(--graphite-rail-field-line);
+    color: var(--graphite-rail-ink-strong);
+  }
+  body:not(.controller-account) #project-jump.drdn { inline-size: 100%; display: block; }
+  body:not(.controller-account) #header #project-jump .drdn-trigger {
+    background-color: var(--graphite-rail-field);
+    background-image: none;
+    border: 1px solid var(--graphite-rail-field-line);
+    border-radius: var(--graphite-radius);
+    color: var(--graphite-rail-ink-strong);
+    padding-block: 6px;
+    padding-inline: 12px;
+    box-sizing: border-box;
+    inline-size: 100%;
+    block-size: auto;
+    min-block-size: 32px;
+    line-height: 1.4;
+  }
+  body:not(.controller-account) #project-jump .drdn-trigger::after { content: "\25BE"; float: inline-end; opacity: 0.7; }
+  /* The popup opens from the left edge of the rail; Redmine anchors it to the right edge, which pushes it off the page here. */
+  body:not(.controller-account) #project-jump .drdn-content {
+    z-index: 60;
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+    inline-size: 280px;
+    border-radius: 10px;
+    box-shadow: 0 12px 32px var(--graphite-shadow);
+  }
+
+  /* General links. */
+  body:not(.controller-account) .general-menu {
+    grid-area: general;
+    padding: 4px 12px 12px;
+    background: var(--graphite-rail);
+    border-block-end: 1px solid var(--graphite-rail-line);
+  }
+  body:not(.controller-account) .top-menu__links ul { flex-direction: column; gap: 1px; }
+  body:not(.controller-account) .top-menu__links a, body:not(.controller-account) .top-menu__links a:link, body:not(.controller-account) .top-menu__links a:visited {
+    display: block;
+    color: var(--graphite-rail-ink);
+    padding: 7px 10px;
+    border-radius: var(--graphite-radius);
+  }
+  body:not(.controller-account) .top-menu__links a:hover { background: var(--graphite-rail-hover); color: var(--graphite-rail-ink-strong); text-decoration: none; }
+
+  /* The profile, at the bottom of the sidebar; its dropdown opens upwards. */
+  body:not(.controller-account) .profile-menu {
+    grid-area: profile;
+    padding: 12px;
+    background: var(--graphite-rail);
+    border-block-start: 1px solid var(--graphite-rail-line);
+  }
+  body:not(.controller-account) #account .dropdown-trigger { color: var(--graphite-rail-ink); }
+  body:not(.controller-account) #account .dropdown-trigger:hover { color: var(--graphite-rail-ink-strong); background: var(--graphite-rail-hover); }
+  body:not(.controller-account) #account .dropdown-trigger .icon-svg { stroke: currentColor; }
+  body:not(.controller-account) #account .dropdown-content {
+    inset-block-start: auto;
+    inset-block-end: calc(100% + 8px);
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+    min-inline-size: 220px;
+  }
+
+  /* The project menu. */
+  body:not(.controller-account) #main-menu {
+    grid-area: menu;
+    position: static;
+    padding: 12px 12px 14px;
+    background: var(--graphite-rail); /* the wrapper's gradient paints the rail too; this keeps the colour on the element itself */
+  }
+  body:not(.controller-account) #main-menu ul { flex-direction: column; align-items: stretch; gap: 1px; min-block-size: 0; }
+  body:not(.controller-account) #main-menu li { display: block; padding: 0; }
+  body:not(.controller-account) #main-menu li a {
+    display: block;
+    color: var(--graphite-rail-ink);
+    padding: 7px 10px;
+    border-radius: var(--graphite-radius);
+  }
+  body:not(.controller-account) #main-menu li a:hover { background: var(--graphite-rail-hover); color: var(--graphite-rail-ink-strong); }
+  body:not(.controller-account) #main-menu li a.selected, body:not(.controller-account) #main-menu li a.selected:hover {
+    background: var(--graphite-rail-selected);
+    color: var(--graphite-rail-selected-ink);
+    box-shadow: none;
+  }
+  body:not(.controller-account) #main-menu li:has(a#new-object) { padding: 0 0 10px; position: relative; }
+  body:not(.controller-account) #main-menu li a.new-object, body:not(.controller-account) #main-menu li a.new-object:hover {
+    text-align: center;
+    background: var(--graphite-accent-7);
+    color: #fff;
+  }
+  /* The "+" menu opens to the right of the sidebar, not over the items below it. */
+  body:not(.controller-account) #main-menu .menu-children {
+    inset-block-start: 0;
+    inset-inline-start: calc(100% - 4px);
+    inline-size: 220px;
+    padding: 6px;
+    border: 1px solid var(--oc-gray-3);
+    border-radius: 10px;
+    background: var(--oc-white);
+    box-shadow: 0 12px 32px var(--graphite-shadow);
+  }
+  body:not(.controller-account) #main-menu .menu-children li a {
+    color: var(--oc-gray-8);
+    background: transparent;
+    border-radius: var(--graphite-radius);
+    padding: 7px 10px;
+  }
+  body:not(.controller-account) #main-menu .menu-children li a:hover { color: var(--oc-gray-9); background: var(--graphite-accent-0); }
+
+  body:not(.controller-account) #main { grid-area: main; }
+  body:not(.controller-account) #footer { grid-area: footer; }
+
+  /* Administration: the admin menu takes the project menu's place. Subpages keep it in the sidebar; the index keeps it in the
+   * page, so the page contents become grid items of the wrapper to put the list in the rail and the title in the main area. */
+  body:not(.controller-account):has(#admin-menu) #main { display: contents; }
+  body:not(.controller-account):has(#admin-menu) #sidebar {
+    grid-area: menu;
+    inline-size: auto;
+    padding: 12px 12px 14px;
+    border: 0;
+    background: var(--graphite-rail);
+    color: var(--graphite-rail-ink);
+  }
+  body:not(.controller-account):has(#admin-menu) #sidebar-switch-panel { display: none; }
+  body:not(.controller-account):has(#admin-menu) #sidebar h3 { color: var(--graphite-rail-dim); padding-inline: 10px; }
+  body:not(.controller-account):has(#admin-menu) #content { grid-area: main; min-inline-size: 0; }
+  body:not(.controller-account):has(#content #admin-menu) #content { display: contents; }
+  body:not(.controller-account):has(#content #admin-menu) #content > h2 { grid-area: main; padding: 24px 28px 0; margin: 0; }
+  body:not(.controller-account):has(#content #admin-menu) #admin-menu { grid-area: menu; background: var(--graphite-rail); padding: 12px 12px 14px; }
+  #admin-menu a, #sidebar #admin-menu a {
+    display: block;
+    color: var(--graphite-rail-ink);
+    padding: 7px 10px;
+    border-radius: var(--graphite-radius);
+  }
+  #admin-menu a svg, #admin-menu a .icon-svg { stroke: currentColor; }
+  #admin-menu a:hover { background: var(--graphite-rail-hover); color: var(--graphite-rail-ink-strong); text-decoration: none; }
+  #admin-menu a.selected, #admin-menu a.selected:hover { background: var(--graphite-rail-selected); color: var(--graphite-rail-selected-ink); }
+}
+
+#main { background: var(--graphite-page); }
+#content {
+  background: transparent;
+  padding-block: 24px 22px;
+  padding-inline: 28px;
+}
+#content > h2 { color: var(--oc-gray-9); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.015em; margin-block: 0 14px; }
+#content h3 { color: var(--oc-gray-9); font-weight: 600; }
+/* Headings inside wiki pages and descriptions: one scale, ink coloured, below the page title. */
+.wiki h1, .wiki h2, .wiki h3, .wiki h4 { color: var(--oc-gray-9); font-weight: 700; letter-spacing: -0.015em; }
+.wiki h1 { font-size: 1.4rem; }
+.wiki h2 { font-size: 1.17rem; }
+.wiki h3 { font-size: 1.03rem; }
+.wiki table { border-collapse: collapse; }
+.wiki table th, .wiki table td { border: 1px solid var(--oc-gray-4); padding: 5px 9px; }
+.wiki table th { background: var(--oc-gray-1); }
+#sidebar { background: transparent; border-inline-start: 1px solid var(--oc-gray-3); inline-size: 232px; }
+#sidebar h3 { color: var(--oc-gray-6); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+#footer { background: transparent; border-block-start: 1px solid var(--oc-gray-3); color: var(--oc-gray-6); }
+
+/* Administration, below the wide layout: Redmine lists the admin menu in the page on the index and in the right-hand sidebar on
+ * every other admin page, so it jumps from one side to the other. The sidebar sits on the left, where the index list is. */
+@media (max-width: 1099px) {
+  #main:has(#sidebar #admin-menu) { flex-direction: row; }
+  #main:has(#sidebar #admin-menu) #sidebar {
+    border-inline-start: 0;
+    border-inline-end: 1px solid var(--oc-gray-3);
+    padding-inline: 28px 16px;
+    inline-size: 250px;
+  }
+  #main:has(#sidebar #admin-menu) #sidebar-switch-panel { display: none; }
+}
+
+/* 4. Issues: the list, the issue page, history. */
+table.list { border: 0; }
+table.list th {
+  background: var(--oc-gray-1);
+  color: var(--oc-gray-6);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-block: 8px;
+  border-block-end: 1px solid var(--oc-gray-4);
+}
+table.list th a { color: var(--oc-gray-6); }
+table.list td { padding-block: 8px; border-block-start: 1px solid var(--oc-gray-2); }
+/* Soft zebra stripes and thin column lines keep wide tables easy to follow; hover is a violet tint instead of Redmine's yellow. */
+.box table.list:not(.odd-even) tbody tr:nth-child(even), .box .even,
+table.list:not(.odd-even) tbody tr:nth-child(even), .even { background-color: var(--oc-gray-0); }
+table.list:not(.odd-even) tbody tr:nth-child(odd), .odd { background-color: var(--oc-white); }
+table.list:not(.odd-even) tbody tr:nth-child(odd):hover, .odd:hover,
+table.list:not(.odd-even) tbody tr:nth-child(even):hover, .even:hover { background-color: var(--graphite-accent-0); }
+table.list > thead > tr > th + th, table.list > tbody > tr > td + td { border-inline-start: 1px solid var(--oc-gray-3); }
+table.list > tbody > tr.group > td { border-inline-start: 0; }
+/* The subject is ink, the ticket number carries the accent. */
+table.list td.subject a, table.list td.parent-subject a { color: var(--oc-gray-9); }
+table.list td.subject a:hover, table.list td.parent-subject a:hover { color: var(--graphite-accent-7); }
+table.list td.assigned_to a, table.list td.author a { color: var(--oc-gray-7); }
+
+/* The issue: a quiet card with a violet edge instead of Redmine's yellow box, and calmer headings inside the description. */
+div.issue {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-gray-3);
+  border-inline-start: 4px solid var(--graphite-accent-6);
+  border-radius: 10px;
+  padding: 18px 22px;
+}
+#content div.issue div.wiki h1 { font-size: 1.3em; }
+#content div.issue div.wiki h2 { font-size: 1.15em; }
+#content div.issue div.wiki h3 { font-size: 1.02em; }
+
+/* Avatars: Redmine's orange and pink do not reach 4.5 to 1 with white text, so those two are darker. */
+.avatar-color-0 { background-color: #c92a2a; }
+.avatar-color-1 { background-color: #b4540a; }
+.avatar-color-7 { background-color: #c2255c; }
+
+/* Small fixes found by the contrast check. */
+span.badge.badge-count { background-color: var(--graphite-accent-7); }
+a.issue.tracker-2, a.issue.tracker-2:visited { color: var(--graphite-accent-7); }
+.syntaxhl .k { color: #006b00; }
+
+/* The list as a task list. Each issue row carries status-N, priority-N and tracker-N classes (the numbers are Redmine's default ids),
+ * so the dots, flags and squares need no script. The script adds the status group colours, the initials and the view tabs. */
+tr.issue.status-1 { --status-colour: #7c8499; }
+tr.issue.status-2 { --status-colour: #7647e0; }
+tr.issue.status-3 { --status-colour: #15a05a; }
+tr.issue.status-4 { --status-colour: #e68a00; }
+tr.issue.status-5 { --status-colour: #3a3a52; }
+tr.issue.status-6 { --status-colour: #d92d4b; }
+table.list td.status::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  inline-size: 12px;
+  block-size: 12px;
+  margin-inline-end: 7px;
+  border: 2px solid var(--status-colour, #7c8499);
+  border-radius: 50%;
+  vertical-align: -1px;
+}
+tr.issue.status-2 td.status::before, tr.issue.status-3 td.status::before, tr.issue.status-5 td.status::before { background: var(--status-colour); }
+
+tr.issue.priority-1 { --priority-colour: #8ea0b8; }
+tr.issue.priority-2 { --priority-colour: #5b8def; }
+tr.issue.priority-3 { --priority-colour: #f08a24; }
+tr.issue.priority-4 { --priority-colour: #e5484d; }
+tr.issue.priority-5 { --priority-colour: #b3123f; }
+table.list td.priority::before { content: "\2691"; margin-inline-end: 6px; color: var(--priority-colour, #8ea0b8); }
+
+tr.issue.tracker-1 { --tracker-colour: #e5484d; }
+tr.issue.tracker-2 { --tracker-colour: #7647e0; }
+tr.issue.tracker-3 { --tracker-colour: #0ea5a5; }
+table.list td.tracker::before {
+  content: "";
+  display: inline-block;
+  inline-size: 10px;
+  block-size: 10px;
+  margin-inline-end: 7px;
+  border-radius: 3px;
+  background: var(--tracker-colour, #7c8499);
+}
+
+/* Status groups: a coloured pill and a count, with the rows below it. */
+table.list tr.group > td { padding-block: 16px 6px; background: var(--oc-white); border-block-start: 0; }
+table.list tr.group span.name {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  background: var(--group-colour, #5a5a72);
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+table.list tr.group span.badge-count { background: transparent; color: var(--oc-gray-6); font-weight: 600; }
+tr.group[data-group="new"] { --group-colour: #6b7388; }
+tr.group[data-group="in-progress"] { --group-colour: #7647e0; }
+tr.group[data-group="resolved"] { --group-colour: #15803d; }
+tr.group[data-group="feedback"] { --group-colour: #b45309; }
+tr.group[data-group="closed"] { --group-colour: #3a3a52; }
+tr.group[data-group="rejected"] { --group-colour: #b42318; }
+tr.group[data-group="immediate"] { --group-colour: #b3123f; }
+tr.group[data-group="urgent"] { --group-colour: #c92a2a; }
+tr.group[data-group="high"] { --group-colour: #b45309; }
+tr.group[data-group="normal"] { --group-colour: #2f5fd0; }
+tr.group[data-group="low"] { --group-colour: #5a6b85; }
+
+.assignee-initials {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 22px;
+  block-size: 22px;
+  margin-inline-end: 6px;
+  border-radius: 50%;
+  background: #5f35c4;
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+/* With the initials in place the name is kept for screen readers and hidden from the eye, as the list is narrow. */
+table.list td.assigned_to a.assignee-name {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+table.list td.assigned_to { white-space: nowrap; }
+.assignee-initials.tone-1 { background: #b0267f; }
+.assignee-initials.tone-2 { background: #0b7a75; }
+.assignee-initials.tone-3 { background: #b4540a; }
+.assignee-initials.tone-4 { background: #2554c7; }
+.assignee-initials.tone-5 { background: #15803d; }
+
+/* View tabs above the list, built by the script from the project menu: Issues, Gantt, Calendar, Activity. */
+nav.view-tabs { display: flex; gap: 4px; margin-block: 0 14px; border-block-end: 1px solid var(--oc-gray-3); }
+nav.view-tabs a, nav.view-tabs a:visited {
+  padding: 8px 14px;
+  color: var(--oc-gray-6);
+  border-block-end: 2px solid transparent;
+  margin-block-end: -1px;
+}
+nav.view-tabs a:hover { color: var(--oc-gray-9); text-decoration: none; }
+nav.view-tabs a.selected { color: var(--graphite-accent-7); border-color: var(--graphite-accent-6); font-weight: 600; }
+
+/* Activity: a quiet date label, then a feed with hairlines. */
+div#activity h3 {
+  margin: 20px 0 4px;
+  padding: 0 0 6px;
+  background: transparent;
+  border: 0;
+  border-block-end: 1px solid var(--oc-gray-3);
+  color: var(--oc-gray-6);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+div#activity dl { margin: 0; }
+div#activity dt { background: transparent; border: 0; padding-block: 12px 0; }
+div#activity dd { margin-block: 0; padding-block: 2px 12px; border-block-end: 1px solid var(--oc-gray-2); }
+div#activity dd .description { color: var(--oc-gray-7); }
+
+/* 5. Forms, buttons, flash messages, context menu, login. */
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=search], input[type=date],
+input[type=url], input[type=tel], input:not([type]), select, textarea {
+  border: 1px solid var(--oc-gray-4);
+  border-radius: var(--graphite-radius);
+  background-color: var(--oc-white);
+  color: var(--oc-gray-9);
+  padding-inline: 10px;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus,
+input[type=date]:focus, input[type=url]:focus, input:not([type]):focus, select:focus, textarea:focus {
+  outline: 3px solid var(--graphite-accent-1);
+  outline-offset: 0;
+  border-color: var(--graphite-accent-6);
+}
+input[type=submit], input[type=button], input[type=reset], button, a.button {
+  border: 1px solid var(--oc-gray-4);
+  border-radius: var(--graphite-radius);
+  background: var(--oc-white);
+  color: var(--oc-gray-8);
+  padding-block: 5px;
+  padding-inline: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover, button:hover, a.button:hover {
+  background: var(--graphite-accent-0);
+  border-color: var(--graphite-accent-4);
+  text-decoration: none;
+}
+input[type=submit] {
+  background: var(--graphite-accent-7);
+  border-color: var(--graphite-accent-7);
+  color: #fff;
+}
+input[type=submit]:hover {
+  background: var(--graphite-accent-8);
+  border-color: var(--graphite-accent-8);
+}
+div.flash { border-radius: 8px; border-width: 1px; }
+#login-form {
+  background: var(--oc-white);
+  border: 1px solid var(--oc-gray-3);
+  border-block-start: 4px solid var(--graphite-accent-6);
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(28, 28, 46, 0.08);
+}
+#login-form a.lost_password { color: var(--graphite-accent-7); }
+
+/* 6. Everything else follows from the tokens. Fix only what is clearly broken. */
+
+
+/* Graphite's own look: the artwork, the type and the details that make it more than a recolour. */
+body {
+  background-color: var(--graphite-page);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 5px 5px;
+}
+/* The paper: a fine grain over everything, with light from the top left and a little shade at the bottom right. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--graphite-grain), radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.5), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(120, 100, 60, 0.14), transparent 60%);
+  mix-blend-mode: var(--graphite-blend);
+  opacity: var(--graphite-grain-opacity);
+}
+#wrapper { position: relative; z-index: 1; background: transparent; }
+#main { background: transparent; }
+h1, h2, h3, h4, #main-menu a, .top-menu__links a, #sidebar h3, nav.view-tabs a, input[type=submit], input[type=button], button, a.button, table.list th, #admin-menu a { font-family: var(--graphite-hand); }
+@media (min-width: 1100px) {
+  body:not(.controller-account) #wrapper {
+    background: linear-gradient(to right, var(--graphite-rail) calc(var(--graphite-rail-width) - 1px), transparent var(--graphite-rail-width));
+  }
+  /* The sheet's margin line, drawn with a pencil: a plain line the filter makes uneven when the script has added it. */
+  body:not(.controller-account) #wrapper::before { content: ""; position: absolute; inset-block: 12px; inset-inline-start: calc(var(--graphite-rail-width) - 2px); border-inline-start: 2px solid var(--graphite-rail-line); opacity: 0.85; pointer-events: none; filter: url(#pencil-line); }
+  body:not(.controller-account) #header h1 { font-family: var(--graphite-hand); font-size: 1.7rem; font-weight: 400; }
+  body:not(.controller-account) #main-menu li a.selected, body:not(.controller-account) #main-menu li a.selected:hover { border: 1.5px solid var(--graphite-ink); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; box-shadow: none; font-weight: 700; }
+  body:not(.controller-account) #main-menu li a.new-object, body:not(.controller-account) #main-menu li a.new-object:hover { background: var(--graphite-red); color: #fff; border: 1.5px solid var(--graphite-ink); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+}
+#content > h2 { display: block; inline-size: fit-content; padding-block-end: 10px; font-size: 2.1rem; font-weight: 400; letter-spacing: -0.01em; background: var(--graphite-scribble) left bottom / 100% 10px no-repeat; }
+#content h3, .wiki h1, .wiki h2, .wiki h3, .wiki h4 { font-weight: 400; }
+/* The list as a to-do list on paper: a hand-drawn round check, ticked in pencil when the issue is closed, and a line under each row. */
+table.list { border: 0; }
+table.list th { background: transparent; color: var(--graphite-ink); font-weight: 400; font-size: 0.9375rem; text-transform: none; letter-spacing: 0; border-block-end: 2px solid var(--graphite-ink); }
+table.list td { border-block-start: 1.5px solid rgba(60, 58, 52, 0.3); }
+table.list > thead > tr > th + th, table.list > tbody > tr > td + td { border-inline-start: 1px dotted rgba(60, 58, 52, 0.45); }
+table.list td.subject::before { content: ""; display: inline-block; box-sizing: border-box; inline-size: 20px; block-size: 20px; margin-inline-end: 9px; border: 1.8px solid var(--graphite-ink); border-radius: 52% 48% 55% 45% / 48% 55% 45% 52%; vertical-align: -5px; background: transparent center / 90% no-repeat; }
+table.list tr.issue.closed td.subject::before { background-image: var(--graphite-tick); }
+table.list tr.issue.closed td.subject a { color: var(--oc-gray-6); text-decoration: line-through; text-decoration-thickness: 1px; }
+table.list tr.issue.overdue td.due_date { color: var(--graphite-red); font-weight: 700; }
+tr.issue.status-1, tr.issue.status-2, tr.issue.status-3, tr.issue.status-4, tr.issue.status-5, tr.issue.status-6 { --status-colour: var(--graphite-ink); }
+tr.issue.priority-1, tr.issue.priority-2, tr.issue.priority-3 { --priority-colour: #6d695e; }
+tr.issue.priority-4, tr.issue.priority-5 { --priority-colour: var(--graphite-red); }
+tr.issue.tracker-1 { --tracker-colour: var(--graphite-red); }
+tr.issue.tracker-2, tr.issue.tracker-3 { --tracker-colour: #55514a; }
+table.list tr.group > td { background: transparent; padding-block: 18px 6px; }
+tr.group[data-group] { --group-colour: transparent; }
+table.list tr.group span.name { padding: 0; background: transparent; color: var(--graphite-ink); font-family: var(--graphite-hand); font-size: 1.15rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+table.list tr.group span.badge-count { color: var(--oc-gray-6); }
+.assignee-initials, .assignee-initials.tone-1, .assignee-initials.tone-2, .assignee-initials.tone-3, .assignee-initials.tone-4, .assignee-initials.tone-5 { background: var(--graphite-hatch); border: 1.6px solid var(--graphite-ink); color: var(--graphite-ink); }
+nav.view-tabs a.selected { color: var(--graphite-ink); border-color: var(--graphite-ink); font-weight: 700; }
+div.issue { position: relative; background: var(--oc-white); border: 1.8px solid var(--graphite-ink); border-inline-start-width: 1.8px; border-radius: 3px 14px 4px 12px / 12px 4px 14px 3px; padding: 24px 26px 18px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 14px 22px -12px rgba(60, 50, 30, 0.4); }
+div.issue::before { content: ""; position: absolute; inset-block-start: -13px; inset-inline-start: 40%; inline-size: 96px; block-size: 26px; background: var(--graphite-tape); transform: rotate(-3deg); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=search], input[type=date], input[type=url], input[type=tel], input:not([type]), select, textarea { border: 1.5px solid var(--graphite-ink); border-radius: 4px 10px 5px 9px / 9px 5px 10px 4px; background-color: var(--oc-white); color: var(--graphite-ink); }
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus, input[type=date]:focus, input[type=url]:focus, input:not([type]):focus, select:focus, textarea:focus { outline: 2px solid var(--graphite-ink); outline-offset: 1px; border-color: var(--graphite-ink); }
+input[type=submit], input[type=button], input[type=reset], button, a.button { background: var(--oc-white); border: 1.8px solid var(--graphite-ink); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; color: var(--graphite-ink); font-size: 0.9375rem; padding-inline: 16px; }
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover, button:hover, a.button:hover { background: var(--graphite-hatch), var(--oc-white); border-color: var(--graphite-ink); }
+input[type=submit] { background: var(--graphite-red); border-color: var(--graphite-ink); color: #fff; }
+input[type=submit]:hover { background: var(--graphite-hatch), var(--graphite-red); color: #fff; }
+#login-form { background: var(--oc-white); border: 1.8px solid var(--graphite-ink); border-radius: 3px 14px 4px 12px / 12px 4px 14px 3px; box-shadow: 0 14px 22px -12px rgba(60, 50, 30, 0.4); }
+span.badge.badge-count { background-color: var(--graphite-ink); color: var(--oc-white); }
+a.issue.tracker-2, a.issue.tracker-2:visited { color: var(--graphite-accent-7); }
+a.issue.tracker-1, a.issue.tracker-1:visited { color: var(--graphite-red); }
+span.required { color: var(--graphite-red); }
+div.flash { border: 1.5px solid var(--graphite-ink); border-radius: 4px 12px 5px 10px / 10px 5px 12px 4px; }
+[class*="avatar-color-"] { background-color: #55514a; color: #fff; }
+
+/* 7. Dark paper, from the system dark setting: pencil in chalk on a charcoal sheet. Every rule for it is in this one block. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --oc-white: #2f3033;
+    --oc-gray-0: #2b2c2f;
+    --oc-gray-1: #323336;
+    --oc-gray-2: #3a3b3f;
+    --oc-gray-3: #46474c;
+    --oc-gray-4: #58595f;
+    --oc-gray-5: #b4b1a6;
+    --oc-gray-6: #c4c1b6;
+    --oc-gray-7: #d6d3c8;
+    --oc-gray-8: #e6e3d9;
+    --oc-gray-9: #f4f1e8;
+    --oc-gray-9-rgb: 244, 241, 232;
+    --graphite-accent-0: #2a3750;
+    --graphite-accent-1: #33466a;
+    --graphite-accent-2: #41588a;
+    --graphite-accent-3: #6b8bbf;
+    --graphite-accent-4: #7e9ccc;
+    --graphite-accent-5: #8ea8cf;
+    --graphite-accent-6: #9db4e0;
+    --graphite-accent-7: #9db4e0;
+    --graphite-accent-8: #c3d3f0;
+    --graphite-accent-9: #d6e0f5;
+    --oc-blue-1-rgb: 51, 70, 106;
+    --oc-blue-7-rgb: 157, 180, 224;
+    --color-top-menu-background: #26272a;
+    --color-header-background: #26272a;
+    --graphite-page: #26272a;
+    --graphite-rail: #222326;
+    --graphite-rail-ink: #d6d3c8;
+    --graphite-rail-ink-strong: #ffffff;
+    --graphite-rail-dim: #b4b1a6;
+    --graphite-rail-hover: rgba(255, 255, 255, 0.08);
+    --graphite-rail-selected: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px 5px);
+    --graphite-rail-selected-ink: #ffffff;
+    --graphite-rail-line: #cfcdc4;
+    --graphite-rail-field: #2f3033;
+    --graphite-rail-field-line: #8a887f;
+    --graphite-ink: #f4f1e8;
+    --graphite-red: #ef8a74;
+    --graphite-hatch: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px 5px);
+    --graphite-blend: screen;
+    --graphite-grain-opacity: 0.35;
+  }
+  input[type=submit], input[type=submit]:hover { color: #1f1e1b; }
+  span.badge.badge-count { color: #26272a; }
+  div.issue::before { opacity: 0.6; }
+  #login-form, div.issue { box-shadow: none; }
+  table.list td.subject::before { border-color: #cfcdc4; }
+  table.list tr.issue.closed td.subject::before { filter: invert(1); }
+  [class*="avatar-color-"] { background-color: #6a6760; color: #fff; }
+  body:not(.controller-account) #main-menu li a.new-object, body:not(.controller-account) #main-menu li a.new-object:hover, #main-menu li a.new-object { color: #1f1e1b; }
+  .pagination ul.pages li.current, .pagination ul.pages li.current span { color: #1f1e1b; }
+  pre, div.wiki pre, div.pre-wrapper pre, code.syntaxhl, div.wiki code.syntaxhl, div.pre-wrapper code { background-color: #efebe0; color: #1f1e1b; }
+}
