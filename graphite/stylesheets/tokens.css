@@ -191,6 +191,21 @@
   --theme-initials-ink: #1c1c1c;
   --theme-phone-menu-background: #2a2a2a;
   --theme-phone-menu-ink: #e6e6e6;
+
+  /* Chart colours: the Rubylode Stats plugin reads these. Muted coloured-pencil versions of the Material hues, each at least 3:1 against the sheet. */
+  --theme-chart-1: #3F7FB0;
+  --theme-chart-2: #4E8A55;
+  --theme-chart-3: #B8681A;
+  --theme-chart-4: #8A4F9E;
+  --theme-chart-5: #2A8C98;
+  --theme-chart-6: #B84A44;
+  --theme-chart-7: #6A52A8;
+  --theme-chart-8: #5F8A2E;
+  --theme-chart-9: #C55A35;
+  --theme-chart-10: #5F7480;
+  --theme-chart-open: #3F7FB0;
+  --theme-chart-closed: #4E8A55;
+  --theme-chart-neutral: #7C8A92;
 }
 
 /* Redmine's palette, pointed at the tokens. Redmine 7 colours itself with the Open Color variables (--oc-*) and a few

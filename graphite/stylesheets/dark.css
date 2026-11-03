@@ -142,6 +142,21 @@
     --theme-avatar-fill: #6a6a6a;
     --theme-initials-ink: #ececec;
     --theme-phone-menu-background: #1c1c1c;
+
+    /* Chart colours: the Rubylode Stats plugin reads these. Muted coloured-pencil versions of the Material hues, lifted for the dark sheet. */
+    --theme-chart-1: #7FB0D8;
+    --theme-chart-2: #92BF97;
+    --theme-chart-3: #E0A765;
+    --theme-chart-4: #C095D0;
+    --theme-chart-5: #6FC0C8;
+    --theme-chart-6: #D88A85;
+    --theme-chart-7: #A494CC;
+    --theme-chart-8: #B5CC85;
+    --theme-chart-9: #E39A7C;
+    --theme-chart-10: #A0B0B8;
+    --theme-chart-open: #7FB0D8;
+    --theme-chart-closed: #92BF97;
+    --theme-chart-neutral: #8B999F;
   }
 
   /* White text on colour: Redmine writes it with --oc-white, which is a dark surface in the dark scheme. */
