@@ -1,0 +1,299 @@
+/* Rubylode Graphite, a theme for Redmine 7
+ * Copyright (C) 2026  Nick Gorbikoff
+ * GNU General Public License, version 2 or later. See the LICENSE file.
+ * Generated from the shared base of the Rubylode themes: a change made here is overwritten by the next build. */
+
+/* Graphite's own touches, the ones tokens cannot express: pencil on paper.
+ *  1. The paper: a fine grain over the page, light from the top left, and the sidebar's margin line drawn in pencil.
+ *  2. Handwriting for titles, menus and buttons, and a scribble under the page title.
+ *  3. Pencil outlines with uneven corners on buttons, fields, messages, the sign-in card and the issue card (with its strip of tape).
+ *  4. The issue list as a to-do list: a hand-drawn check, a hatched circle for the status, a flag for the priority.
+ *  5. The assignee initials and the view tabs that extra.js adds.
+ *  6. The phone slide-out menu, dark in both schemes. */
+
+/* ==========================================================================
+   1. The paper
+   ========================================================================== */
+body {
+  background-color: var(--theme-page);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 5px 5px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--theme-paper-grain-image), var(--theme-paper-light);
+  mix-blend-mode: var(--theme-paper-blend);
+  opacity: var(--theme-paper-grain-opacity);
+}
+#wrapper { position: relative; z-index: 1; background: transparent; }
+#main { background: transparent; }
+:root { --theme-header-background: transparent; }
+@media screen and (min-width: 1100px) {
+  body:not(.controller-account) #wrapper {
+    background: linear-gradient(
+      to right,
+      var(--theme-sidebar-background) calc(var(--theme-sidebar-width) - 1px),
+      transparent var(--theme-sidebar-width)
+    );
+  }
+  /* The sheet's margin line, drawn with a pencil: a plain line that the filter makes uneven once extra.js has added it. */
+  body:not(.controller-account) #wrapper::before {
+    content: "";
+    position: absolute;
+    inset-block: calc(var(--theme-top-bar-height) + 8px) 12px;
+    inset-inline-start: calc(var(--theme-sidebar-width) - 2px);
+    border-inline-start: 2px solid var(--theme-sidebar-line);
+    opacity: 0.85;
+    pointer-events: none;
+    filter: url(#pencil-line);
+  }
+  body:not(.controller-account) #header h1,
+  body:not(.controller-account):not(.has-main-menu) #header h1 { font-family: var(--theme-title-font); font-size: 1.7rem; font-weight: 400; }
+  body:not(.controller-account) #header h1::before { border: 1.5px solid var(--theme-pencil); border-radius: var(--theme-sketchy-corners-card); }
+  body:not(.controller-account) #main-menu li a.selected,
+  body:not(.controller-account) #main-menu li a.selected:hover,
+  body:not(.controller-account) .general-menu .top-menu__links a.home,
+  body:not(.controller-account) .general-menu .top-menu__links a.my-page { font-weight: 400; }
+  body:not(.controller-account) #main-menu li a.selected,
+  body:not(.controller-account) #main-menu li a.selected:hover {
+    border: 1.5px solid var(--theme-pencil);
+    border-radius: var(--theme-sketchy-corners);
+    box-shadow: none;
+    font-weight: 700;
+  }
+  body:not(.controller-account) #main-menu li a.new-object,
+  body:not(.controller-account) #main-menu li a.new-object:hover {
+    border: 1.5px solid var(--theme-pencil);
+    border-radius: var(--theme-sketchy-corners);
+  }
+}
+
+/* ==========================================================================
+   2. Handwriting and the scribble under the title
+   ========================================================================== */
+#main-menu a, .top-menu__links a, #sidebar h3, nav.view-tabs a, table.list th, #admin-menu a, #account .dropdown-trigger {
+  font-family: var(--theme-title-font);
+}
+#content > h2 {
+  display: block;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  padding-block-end: 10px;
+  font-size: 2.1rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background: var(--theme-scribble-image) left bottom / 100% 10px no-repeat;
+}
+#content h3, .wiki h1, .wiki h2, .wiki h3, .wiki h4 { font-weight: 400; }
+
+/* ==========================================================================
+   3. Pencil outlines
+   ========================================================================== */
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=search], input[type=date],
+input[type=url], input[type=tel], input:not([type]), select, textarea {
+  border: 1.5px solid var(--theme-pencil);
+  border-radius: var(--theme-sketchy-corners-field);
+}
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus,
+input[type=date]:focus, input[type=url]:focus, input:not([type]):focus, select:focus, textarea:focus {
+  outline: 2px solid var(--theme-pencil);
+  outline-offset: 1px;
+  border-color: var(--theme-pencil);
+  box-shadow: none;
+}
+input[type=submit], input[type=button], input[type=reset],
+button:not(.tab-left):not(.tab-right):not(.icon-only):not(.ui-button):not(.ui-dialog-titlebar-close):not(.jstElements button), a.button {
+  border: 1.8px solid var(--theme-pencil);
+  border-radius: var(--theme-sketchy-corners);
+  font-family: var(--theme-title-font);
+  font-weight: 400;
+  padding-inline: 16px;
+}
+input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover,
+button:not(.tab-left):not(.tab-right):not(.icon-only):not(.ui-button):not(.ui-dialog-titlebar-close):not(.jstElements button):hover, a.button:hover {
+  background-image: var(--theme-hatch);
+  border-color: var(--theme-pencil);
+}
+#content > .contextual > a, #content > .contextual > .drdn > .drdn-trigger, div.issue .contextual > a, #sidebar .contextual > a,
+#content a.button, #query_form p.buttons a, #query_form_with_buttons p.buttons a, p.buttons > a.icon {
+  border: 1.5px solid var(--theme-pencil);
+  border-radius: var(--theme-sketchy-corners);
+  font-family: var(--theme-title-font);
+}
+#content > .contextual > a:hover, div.issue .contextual > a:hover, #sidebar .contextual > a:hover { background-image: var(--theme-hatch); }
+div.flash, #errorExplanation { border: 1.5px solid var(--theme-pencil); border-radius: var(--theme-sketchy-corners-card); }
+#login-form {
+  border: 1.8px solid var(--theme-pencil);
+  border-radius: var(--theme-sketchy-corners-card);
+  box-shadow: var(--theme-shadow-card);
+}
+span.badge.badge-count { background-color: var(--theme-pencil); color: var(--theme-page); }
+/* Avatars are drawn in one pencil grey, with white initials, instead of Redmine's eight colours. */
+span[class*="avatar-color-"][class*="avatar-color-"] { background-color: var(--theme-avatar-fill); color: #ffffff; }
+
+/* The issue card: a sheet with a pencil outline, held down by a strip of tape. */
+div.issue.details {
+  position: relative;
+  border: 1.8px solid var(--theme-pencil);
+  border-inline-start-width: 1.8px;
+  border-radius: var(--theme-sketchy-corners-card);
+  padding: 24px 26px 18px;
+  box-shadow: var(--theme-shadow-card);
+}
+div.issue.details::before {
+  content: "";
+  position: absolute;
+  inset-block-start: -13px;
+  inset-inline-start: 40%;
+  inline-size: 96px;
+  block-size: 26px;
+  background: var(--theme-tape-image);
+  opacity: var(--theme-tape-opacity);
+  transform: rotate(-3deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   4. The issue list as a to-do list on paper
+   ========================================================================== */
+table.list { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+table.list > thead > tr > th {
+  background: transparent;
+  color: var(--theme-ink);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  border-block-end: 2px solid var(--theme-pencil);
+}
+table.list > tbody > tr > td { border-block-start: 1.5px solid var(--theme-pencil-soft); }
+table.list > thead > tr > th + th, table.list > tbody > tr > td + td { border-inline-start: 1px dotted var(--theme-pencil-dotted); }
+table.list > tbody > tr.group > td { border-inline-start: 0; }
+table.list tr.group > td { background: transparent; padding-block: 18px 6px; border-block-start: 0; }
+table.list tr.group span.name { font-family: var(--theme-title-font); font-size: 1.15rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+
+/* A hand-drawn round check before each subject, ticked in pencil when the issue is closed */
+table.list.issues td.subject::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  inline-size: 20px;
+  block-size: 20px;
+  margin-inline-end: 9px;
+  border: 1.8px solid var(--theme-pencil);
+  border-radius: 52% 48% 55% 45% / 48% 55% 45% 52%;
+  vertical-align: -5px;
+  background: transparent center / 90% no-repeat;
+}
+table.list.issues tr.issue.closed td.subject::before { background-image: var(--theme-tick-image); filter: var(--theme-tick-filter); }
+table.list.issues tr.issue.closed td.subject a { color: var(--theme-ink-muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+table.list.issues tr.issue.overdue td.due_date { color: var(--theme-red-pencil-ink); font-weight: 700; }
+/* A child row keeps the arrow the base draws in its indent */
+table.list.issues tr.idnt td.subject::before { inline-size: 16px; block-size: auto; margin-inline: -18px 0; border: 0; border-radius: 0; background: none; filter: none; vertical-align: baseline; }
+
+/* Status: a circle in pencil. Empty for New, hatched for In Progress and Feedback, filled for Resolved and Closed, red for Rejected. */
+table.list.issues > tbody > tr.issue > td.status,
+table.list.issues > tbody > tr.issue:is(.priority-1, .priority-2, .priority-3, .priority-4, .priority-5) > td.priority {
+  inline-size: auto;
+  background-image: none;
+  background-clip: border-box;
+  color: var(--theme-ink);
+  font-size: inherit;
+  font-weight: 400;
+}
+table.list.issues > tbody > tr.issue > td.status::after,
+table.list.issues > tbody > tr.issue > td.priority::after { display: none; }
+table.list.issues > tbody > tr.issue { --state-fill: var(--theme-pencil); --state-line: var(--theme-pencil); }
+table.list.issues > tbody > tr.issue.status-1 { --state-fill: transparent; }
+table.list.issues > tbody > tr.issue:is(.status-2, .status-4) { --state-fill: var(--theme-hatch); }
+table.list.issues > tbody > tr.issue.status-6 { --state-fill: var(--theme-red-pencil); --state-line: var(--theme-red-pencil); }
+table.list.issues > tbody > tr.issue > td.status::before {
+  box-sizing: border-box;
+  inline-size: 13px;
+  block-size: 13px;
+  margin: 0 7px 0 0;
+  border: 2px solid var(--state-line);
+  border-radius: var(--theme-radius-round);
+  background: var(--state-fill);
+  vertical-align: -2px;
+}
+
+/* Priority: a flag, in pencil for the low levels and in red pencil for Urgent and Immediate. */
+table.list.issues > tbody > tr.issue { --priority-colour: var(--theme-ink-muted); }
+table.list.issues > tbody > tr.issue:is(.priority-4, .priority-5) { --priority-colour: var(--theme-red-pencil-ink); }
+table.list.issues > tbody > tr.issue[class*="priority-"] > td.priority::before {
+  content: "\2691";
+  inline-size: auto;
+  block-size: auto;
+  margin: 0 6px 0 0;
+  background: none;
+  color: var(--priority-colour);
+  vertical-align: baseline;
+}
+
+/* Tracker: a small square, red pencil for bugs */
+table.list.issues td.tracker::before {
+  content: "";
+  display: inline-block;
+  inline-size: 10px;
+  block-size: 10px;
+  margin-inline-end: 7px;
+  border-radius: 3px;
+  background: var(--theme-ink-soft);
+}
+table.list.issues tr.issue.tracker-1 td.tracker::before { background: var(--theme-red-pencil); }
+
+/* ==========================================================================
+   5. The initials and the view tabs (extra.js)
+   ========================================================================== */
+.assignee-initials {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  inline-size: 24px;
+  block-size: 24px;
+  margin-inline-end: 6px;
+  border: 1.6px solid var(--theme-pencil);
+  border-radius: var(--theme-radius-round);
+  background: var(--theme-initials-fill);
+  color: var(--theme-initials-ink);
+  font-size: 0.625rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+/* In a list the initials stand in for the name, which stays in the page for screen readers and shows as a tooltip. */
+table.list td.assigned_to a.assignee-name {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+table.list td.assigned_to { white-space: nowrap; }
+
+/* The tabs above the issue list: Issues, Gantt, Calendar, Activity */
+nav.view-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-block: 0 14px; border-block-end: 1.5px solid var(--theme-pencil-soft); }
+nav.view-tabs a, nav.view-tabs a:visited {
+  padding: 8px 14px;
+  color: var(--theme-ink-muted);
+  border-block-end: 2px solid transparent;
+  margin-block-end: -1.5px;
+}
+nav.view-tabs a:hover { color: var(--theme-ink); text-decoration: none; }
+nav.view-tabs a.selected { color: var(--theme-ink); border-color: var(--theme-pencil); font-weight: 700; }
+
+/* ==========================================================================
+   6. The phone slide-out menu: dark in both schemes
+   ========================================================================== */
+body .flyout-menu { background-color: var(--theme-phone-menu-background); color: var(--theme-phone-menu-ink); }
+body .flyout-menu h3 { background-color: rgba(255, 255, 255, 0.07); border-block-color: var(--theme-phone-menu-background); color: var(--theme-phone-menu-ink); }
+body .flyout-menu a, body .flyout-menu a:link, body .flyout-menu a:visited, body .flyout-menu .icon-label { color: var(--theme-phone-menu-ink); }
+body .flyout-menu a:hover, body .flyout-menu a.selected, body .flyout-menu a.selected:link, body .flyout-menu a.selected:hover { color: #ffffff; }
+body .flyout-menu ul li { border-block-color: rgba(255, 255, 255, 0.1); }
+body .flyout-menu .flyout-menu__avatar { background: rgba(255, 255, 255, 0.1); }
