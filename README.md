@@ -1,5 +1,7 @@
 # Rubylode Graphite for Redmine
 
+<p><img src="docs/thumbnail.png" alt="Rubylode Graphite theme" width="160"></p>
+
 A pencil-drawing theme for Redmine 7 and up: graphite greys on a cool near-white sheet, sketched double-stroke outlines, hatching in place of shadows, handwritten titles, and the project menu as a sidebar on wide screens.
 
 It is plain CSS plus one small script (`javascripts/theme.js`), with no plugin, no build step and no change to Redmine itself.
