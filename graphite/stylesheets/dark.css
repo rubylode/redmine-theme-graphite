@@ -10,139 +10,138 @@
     color-scheme: dark;
   }
 
-  /* Graphite's tokens, dark values: pencil in chalk on a charcoal sheet. A name not set here keeps its light value from tokens.css. */
+  /* Graphite's tokens, dark values: chalk-grey lines on a dark graphite sheet. A name not set here keeps its light value from tokens.css. */
   :root {
-    --theme-page: #26272a;
-    --theme-surface: #2f3033;
-    --theme-surface-sunken: #2b2c2f;
-    --theme-surface-hover: #2a3750;
-    --theme-line: #46474c;
-    --theme-line-soft: #3a3b3f;
-    --theme-line-strong: #cfcdc4;
+    --theme-page: #2a2a2a;
+    --theme-surface: #333333;
+    --theme-surface-sunken: #2e2e2e;
+    --theme-surface-hover: #404040;
+    --theme-line: #5a5a5a;
+    --theme-line-soft: #444444;
+    --theme-line-strong: #d8d8d8;
 
-    --theme-ink: #f4f1e8;
-    --theme-ink-soft: #e6e3d9;
-    --theme-ink-muted: #b9b6ab;
+    --theme-ink: #ececec;
+    --theme-ink-soft: #dcdcdc;
+    --theme-ink-muted: #b8b8b8;
+    --theme-ink-on-primary: #1c1c1c;
 
-    --theme-accent-0: #2a3750;
-    --theme-accent-1: #33466a;
-    --theme-accent-2: #41588a;
-    --theme-accent-8: #c3d3f0;
-    --theme-accent-9: #d6e0f5;
-    --theme-accent-1-rgb: 51, 70, 106;
+    --theme-accent-0: #3a3a3a;
+    --theme-accent-1: #484848;
+    --theme-accent-2: #5c5c5c;
+    --theme-accent-8: #e4e4e4;
+    --theme-accent-9: #f2f2f2;
+    --theme-accent-1-rgb: 72, 72, 72;
 
-    --theme-secondary-pale: #2a3750;
-    --theme-tertiary: #7a4a3f;
-    --theme-tertiary-pale: #3d2a26;
-    --theme-accent-pale: #2a3750;
+    --theme-secondary-pale: #3a3a3a;
+    --theme-tertiary: #6a6a6a;
+    --theme-tertiary-pale: #444444;
+    --theme-accent-pale: #3a3a3a;
 
-    --theme-link: #9db4e0;
-    --theme-link-hover: #c3d3f0;
-    --theme-primary: #b2432f;
-    --theme-primary-hover: #983525;
-    --theme-redmine-accent: #9db4e0;
-    --theme-redmine-accent-rgb: 157, 180, 224;
+    --theme-link: #ececec;
+    --theme-link-hover: #ffffff;
+    --theme-primary: #e8e8e8;
+    --theme-primary-hover: #ffffff;
+    --theme-redmine-accent: #d0d0d0;
+    --theme-redmine-accent-rgb: 208, 208, 208;
 
-    --theme-header-background: #26272a;
-    --theme-header-background-solid: #26272a;
-    --theme-header-link: #d6d3c8;
+    --theme-header-background: #2a2a2a;
+    --theme-header-background-solid: #2a2a2a;
+    --theme-header-link: #d8d8d8;
     --theme-header-hover-background: rgba(255, 255, 255, 0.08);
-    --theme-header-line: #cfcdc4;
-    --theme-header-field-background: #2f3033;
-    --theme-header-field-border: #8a887f;
+    --theme-header-line: #bdbdbd;
+    --theme-header-field-background: #333333;
+    --theme-header-field-border: #8f8f8f;
 
-    --theme-sidebar-background: #222326;
-    --theme-sidebar-line: #cfcdc4;
-    --theme-sidebar-tile: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0 1px, transparent 1px 5px), #2f3033;
+    --theme-sidebar-background: #252525;
+    --theme-sidebar-line: #bdbdbd;
+    --theme-sidebar-tile: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0 1px, transparent 1px 5px), #333333;
     --theme-sidebar-hover-background: rgba(255, 255, 255, 0.08);
-    --theme-sidebar-selected-background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px 5px);
+    --theme-sidebar-selected-background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0 1.2px, transparent 1.2px 5px), #252525;
     --theme-sidebar-selected-ink: #ffffff;
 
-    --theme-button-background: #2f3033;
-    --theme-button-border: #cfcdc4;
-    --theme-button-ink: #f4f1e8;
-    --theme-danger-soft: #42221f;
-    --theme-danger-soft-border: #7f3a2f;
-    --theme-danger-ink: #ffb3a3;
+    --theme-button-background: #333333;
+    --theme-button-border: #d8d8d8;
+    --theme-button-ink: #ececec;
+    --theme-danger-soft: #3a3a3a;
+    --theme-danger-soft-border: #7a7a7a;
+    --theme-danger-ink: #e6a79d;
 
-    --theme-focus: #9db4e0;
-    --theme-focus-halo: rgba(157, 180, 224, 0.3);
+    --theme-focus: #f0f0f0;
+    --theme-focus-halo: rgba(220, 220, 220, 0.25);
 
-    --theme-status-new: #aab4c9;
-    --theme-status-in-progress: #9db4e0;
-    --theme-status-resolved: #6fcf92;
-    --theme-status-feedback: #f0b868;
-    --theme-status-closed: #b4b1a6;
-    --theme-status-rejected: #ef8a74;
-    --theme-success: #6fcf92;
-    --theme-warning: #f0b868;
-    --theme-danger: #ef8a74;
-    --theme-danger-strong: #a63a27;
+    --theme-status-new: #b0b0b0;
+    --theme-status-in-progress: #e0e0e0;
+    --theme-status-resolved: #c8c8c8;
+    --theme-status-feedback: #bcbcbc;
+    --theme-status-closed: #9a9a9a;
+    --theme-status-rejected: #f2f2f2;
+    --theme-success: #c8c8c8;
+    --theme-warning: #b0b0b0;
+    --theme-danger: #d0d0d0;
+    --theme-danger-strong: #5a5a5a;
 
     --theme-chip-ink-mix: #ffffff;
     --theme-chip-ink-share: 55%;
     --theme-chip-fill-share: 24%;
 
-    --theme-shadow-card: 0 1px 1px rgba(0, 0, 0, 0.4), 0 10px 18px -12px rgba(0, 0, 0, 0.6);
-    --theme-shadow-popup: 0 12px 28px rgba(0, 0, 0, 0.5);
-    --theme-shadow-header-scrolled: none;
+    --theme-shadow-popup: 5px 5px 0 rgba(0, 0, 0, 0.45);
 
     /* Code blocks stay light: the syntax colours are made for a light background. */
-    --theme-code-background: #efebe0;
-    --theme-code-ink: #1f1e1b;
+    --theme-code-background: #f0f0f0;
+    --theme-code-ink: #1c1c1c;
 
-    --theme-success-ink: #8fe0ad;
-    --theme-success-soft: #173d27;
-    --theme-caution-ink: #f0c070;
-    --theme-caution-soft: #4a3a14;
+    --theme-success-ink: #dcdcdc;
+    --theme-success-soft: #3a3a3a;
+    --theme-caution-ink: #dcdcdc;
+    --theme-caution-soft: #404040;
 
-    --theme-flash-success-background: #173d27;
-    --theme-flash-success-border: #2f7a4a;
-    --theme-flash-success-ink: #c2f0d2;
-    --theme-flash-warning-background: #4a3a14;
-    --theme-flash-warning-border: #a37a2a;
-    --theme-flash-warning-ink: #ffe9b8;
-    --theme-activity-edit-ink: #b5c4ee;
-    --theme-activity-wiki-ink: #ffb496;
-    --theme-search-highlight-ink: #ffe9d8;
-    --theme-diff-removed: #42221f;
-    --theme-diff-added: #173d27;
-    --theme-gantt-late-label: #ffb496;
+    --theme-flash-success-background: #3a3a3a;
+    --theme-flash-success-border: #8a8a8a;
+    --theme-flash-success-ink: #ececec;
+    --theme-flash-warning-background: #404040;
+    --theme-flash-warning-border: #8a8a8a;
+    --theme-flash-warning-ink: #ececec;
+    --theme-activity-edit-ink: #dcdcdc;
+    --theme-activity-wiki-ink: #dcdcdc;
+    --theme-search-highlight-ink: #ffffff;
+    --theme-diff-removed: #4a4a4a;
+    --theme-diff-added: #3a3a3a;
+    --theme-gantt-late: #8f8f8f;
+    --theme-gantt-late-label: #dcdcdc;
 
     /* The select arrow, the magnifier and the project switcher arrow are drawn in chalk. */
-    --theme-select-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f4f1e8' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-    --theme-search-field-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f4f1e8' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
-    --theme-project-jump-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f4f1e8' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    --theme-select-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ececec' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    --theme-search-field-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ececec' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+    --theme-project-jump-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ececec' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 
     /* Redmine's own palette, dark. --oc-white is the panel colour, so the base sets white text on colour by hand. */
     --theme-redmine-white: var(--theme-surface);
-    --theme-neutral-0: #2b2c2f;
-    --theme-neutral-1: #323336;
-    --theme-neutral-2: #3a3b3f;
-    --theme-neutral-3: #46474c;
-    --theme-neutral-4: #58595f;
-    --theme-neutral-5: #b4b1a6;
-    --theme-neutral-6: #c4c1b6;
-    --theme-neutral-7: #d6d3c8;
-    --theme-neutral-8: #e6e3d9;
-    --theme-neutral-9: #f4f1e8;
-    --theme-neutral-9-rgb: 244, 241, 232;
+    --theme-neutral-0: #2e2e2e;
+    --theme-neutral-1: #363636;
+    --theme-neutral-2: #404040;
+    --theme-neutral-3: #4c4c4c;
+    --theme-neutral-4: #5e5e5e;
+    --theme-neutral-5: #b8b8b8;
+    --theme-neutral-6: #c4c4c4;
+    --theme-neutral-7: #d4d4d4;
+    --theme-neutral-8: #e4e4e4;
+    --theme-neutral-9: #f2f2f2;
+    --theme-neutral-9-rgb: 242, 242, 242;
 
-    /* Graphite's own: chalk lines and hatching, grain screened into the charcoal, a tick drawn in chalk. */
-    --theme-red-pencil: #ef8a74;
-    --theme-red-pencil-ink: #f4a090;
-    --theme-pencil: #f4f1e8;
-    --theme-scribble-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%2210%22%20viewBox%3D%220%200%20240%2010%22%3E%3Cpath%20d%3D%22M2%206%20C30%202%2060%209%2092%205%20S160%202%20190%206%20S228%204%20238%205%22%20fill%3D%22none%22%20stroke%3D%22%23d6d3c8%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.75%22%2F%3E%3Cpath%20d%3D%22M6%208%20C50%206%20110%209%20170%207%20S220%208%20236%207%22%20fill%3D%22none%22%20stroke%3D%22%23d6d3c8%22%20stroke-width%3D%221%22%20opacity%3D%22.5%22%2F%3E%3C%2Fsvg%3E");
-    --theme-pencil-soft: rgba(244, 241, 232, 0.28);
-    --theme-pencil-dotted: rgba(244, 241, 232, 0.4);
-    --theme-hatch: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px 5px);
-    --theme-paper-blend: screen;
-    --theme-paper-grain-opacity: 0.35;
-    --theme-tape-opacity: 0.6;
-    --theme-tick-filter: invert(1);
-    --theme-avatar-fill: #6a6760;
-    --theme-initials-ink: #f4f1e8;
-    --theme-phone-menu-background: #1d1e20;
+    /* Graphite's own: chalk lines and hatching. */
+    --theme-red-pencil-ink: #e6a79d;
+    --theme-pencil: #e2e2e2;
+    --theme-pencil-soft: #8f8f8f;
+    --theme-pencil-dotted: rgba(226, 226, 226, 0.4);
+    --theme-hatch: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px 5px);
+    --theme-crosshatch: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0 1px, transparent 1px 4px), repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0 1px, transparent 1px 4px);
+    --theme-sketch-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none' stroke='%23e2e2e2' stroke-linecap='round' stroke-linejoin='round'%3E %3Cg stroke-width='9'%3E%3Cpath d='M2 32 C50 27 100 35 150 30 S215 32 238 29'/%3E%3Cpath d='M209 3 C205 60 213 120 208 178 S211 222 207 238'/%3E%3Cpath d='M236 209 C190 213 130 206 80 211 S30 208 3 212'/%3E%3Cpath d='M31 237 C27 180 34 120 29 70 S32 25 30 5'/%3E%3C/g%3E %3Cg stroke-width='4' opacity='.55'%3E%3Cpath d='M14 38 C70 34 120 40 170 35'/%3E%3Cpath d='M203 20 C200 80 205 130 202 170'/%3E%3Cpath d='M222 213 C170 218 110 213 60 217'/%3E%3Cpath d='M36 220 C33 160 38 110 34 60'/%3E%3C/g%3E%3C/svg%3E ");
+    --theme-row-rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='6' viewBox='0 0 400 6' preserveAspectRatio='none' fill='none' stroke='%238f8f8f' stroke-linecap='round'%3E%3Cpath d='M0 2.6 C80 1.8 150 3.6 220 2.8 S340 2.2 400 3.2' stroke-width='1.4'/%3E%3Cpath d='M30 4.4 C120 4 200 4.7 330 4.1' stroke-width='0.7' opacity='.6'/%3E%3C/svg%3E");
+    --theme-head-rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='8' viewBox='0 0 400 8' preserveAspectRatio='none' fill='none' stroke='%23e2e2e2' stroke-linecap='round'%3E%3Cpath d='M0 2.6 C90 1.6 160 3.8 240 2.8 S350 2 400 3.4' stroke-width='2.2'/%3E%3Cpath d='M12 6 C100 5.2 200 6.4 320 5.6' stroke-width='1.1' opacity='.8'/%3E%3C/svg%3E");
+    --theme-tape-opacity: 0.55;
+    --theme-avatar-fill: #6a6a6a;
+    --theme-initials-ink: #ececec;
+    --theme-phone-menu-background: #1c1c1c;
   }
 
   /* White text on colour: Redmine writes it with --oc-white, which is a dark surface in the dark scheme. */

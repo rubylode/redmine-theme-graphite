@@ -3,137 +3,138 @@
  * GNU General Public License, version 2 or later. See the LICENSE file.
  * Generated from the shared base of the Rubylode themes: a change made here is overwritten by the next build. */
 
-/* Graphite's tokens, light values: pencil on paper. The dark values of the same names are in dark.css. */
+/* Graphite's tokens, light values: pencil on paper. Everything is a grey from light pencil to near-black; the one colour left is a
+   muted red for overdue dates and error text. The dark values of the same names are in dark.css. */
 :root {
-  /* Surfaces: a warm paper page, a lighter sheet for panels. The grain over the page is in flourishes.css. */
-  --theme-page: #f1ede2;
-  --theme-surface: #f7f4ea;
-  --theme-surface-sunken: #ebe6d8;      /* attribute panels, journal headers, table stripes */
-  --theme-surface-hover: #e3e9f2;       /* hovered rows and menu items: a pale wash of blue pencil */
-  --theme-line: #c6bfa9;                /* row lines and panel borders */
-  --theme-line-soft: #d9d3c0;           /* column lines, quiet chips */
-  --theme-line-strong: #1f1e1b;         /* field borders: the pencil itself */
+  /* Surfaces: a cool near-white sheet. The page and the panels are two greys of the same paper. */
+  --theme-page: #f4f4f4;
+  --theme-surface: #fbfbfb;
+  --theme-surface-sunken: #ececec;      /* attribute panels, journal headers, table stripes */
+  --theme-surface-hover: #e2e2e2;       /* hovered rows and menu items */
+  --theme-line: #bdbdbd;                /* row lines and panel borders */
+  --theme-line-soft: #d6d6d6;           /* column lines, quiet chips */
+  --theme-line-strong: #1c1c1c;         /* field borders: the pencil itself */
 
   /* Text. All three reach WCAG AA on every surface above. */
-  --theme-ink: #1f1e1b;
-  --theme-ink-soft: #35332e;
-  --theme-ink-muted: #55514a;
+  --theme-ink: #1c1c1c;
+  --theme-ink-soft: #333333;
+  --theme-ink-muted: #555555;
   --theme-ink-on-colour: #ffffff;
-  --theme-ink-on-light-colour: #1f1e1b;
+  --theme-ink-on-light-colour: #1c1c1c;
 
-  /* The accent: blue pencil, light to dark. Step 6 is the plugins' accent, step 7 the link colour. */
-  --theme-accent-0: #e6ecf5;
-  --theme-accent-1: #d3deee;
-  --theme-accent-2: #b8c9e3;
-  --theme-accent-3: #8ea8cf;
-  --theme-accent-4: #6b8bbf;
-  --theme-accent-5: #4f6fa6;
-  --theme-accent-6: #3d5c92;
-  --theme-accent-7: #2e4a7d;
-  --theme-accent-8: #223a65;
-  --theme-accent-9: #1b2f52;
-  --theme-accent-1-rgb: 211, 222, 238;
+  /* The accent: graphite, light pencil to near-black. Step 6 is the plugins' accent, step 7 the link colour. */
+  --theme-accent-0: #efefef;
+  --theme-accent-1: #e0e0e0;
+  --theme-accent-2: #cccccc;
+  --theme-accent-3: #b0b0b0;
+  --theme-accent-4: #8f8f8f;
+  --theme-accent-5: #6e6e6e;
+  --theme-accent-6: #4a4a4a;
+  --theme-accent-7: #2e2e2e;
+  --theme-accent-8: #1c1c1c;
+  --theme-accent-9: #0e0e0e;
+  --theme-accent-1-rgb: 224, 224, 224;
 
-  /* A second and third hue, used sparingly: a grey-blue for selection and the focus halo, the red pencil for search highlights. */
-  --theme-secondary: #b8c9e3;
-  --theme-secondary-pale: #e6ecf5;
-  --theme-tertiary: #e8b9ab;
-  --theme-tertiary-pale: #f6e4de;
-  --theme-accent-pale: #e6ecf5;
+  /* A second and third tone, used sparingly: a mid grey for selection and the focus halo, a pale grey for search highlights. */
+  --theme-secondary: #c4c4c4;
+  --theme-secondary-pale: #ececec;
+  --theme-tertiary: #cfcfcf;
+  --theme-tertiary-pale: #e4e4e4;
+  --theme-accent-pale: #ececec;
 
-  --theme-link: var(--theme-accent-7);
-  --theme-link-hover: var(--theme-accent-8);
-  --theme-primary: #b2432f;                        /* the red pencil: the main action button, the New issue button, the current page */
-  --theme-primary-hover: #983525;
-  --theme-ink-on-primary: #ffffff;
+  --theme-link: #1c1c1c;
+  --theme-link-hover: #000000;
+  --theme-primary: #2b2b2b;                        /* dark graphite: the main action button, the New issue button, the current page */
+  --theme-primary-hover: #000000;
+  --theme-ink-on-primary: #fafafa;
   --theme-primary-background: var(--theme-primary);
   --theme-primary-background-hover: var(--theme-primary-hover);
-  --theme-redmine-accent: var(--theme-accent-7);
-  --theme-redmine-accent-rgb: 46, 74, 125;
+  --theme-redmine-accent: #2e2e2e;
+  --theme-redmine-accent-rgb: 46, 46, 46;
   --theme-selected-tab-border-image: none;
 
-  /* The header: the page's own paper, with a pencil line under it. */
+  /* The header: the page's own sheet, with a pencil line under it. */
   --theme-header-background: var(--theme-page);
-  --theme-header-background-solid: #f1ede2;
+  --theme-header-background-solid: #f4f4f4;
   --theme-header-ink: var(--theme-ink);
-  --theme-header-link: #35332e;
-  --theme-header-hover-background: rgba(40, 38, 34, 0.08);
-  --theme-header-line: #4a4843;
-  --theme-header-field-background: #f7f4ea;
-  --theme-header-field-border: #4a4843;
+  --theme-header-link: #333333;
+  --theme-header-hover-background: rgba(28, 28, 28, 0.08);
+  --theme-header-line: #444444;
+  --theme-header-field-background: #fbfbfb;
+  --theme-header-field-border: #444444;
   --theme-mark-image: url("../images/graphite-mark.svg");
 
-  /* The project sidebar: a rail of paper with a pencil line beside it, the selected item shaded with hatching. */
+  /* The project sidebar: a rail with a pencil line beside it, the selected item shaded with hatching. */
   --theme-sidebar-width: 240px;
-  --theme-sidebar-background: #eee9dd;
-  --theme-sidebar-line: #4a4843;
-  --theme-sidebar-tile: repeating-linear-gradient(135deg, rgba(40, 38, 34, 0.38) 0 1px, transparent 1px 5px), #f7f4ea;
-  --theme-sidebar-hover-background: rgba(40, 38, 34, 0.08);
-  --theme-sidebar-selected-background: repeating-linear-gradient(135deg, rgba(40, 38, 34, 0.2) 0 1px, transparent 1px 5px);
-  --theme-sidebar-selected-ink: #111111;
+  --theme-sidebar-background: #efefef;
+  --theme-sidebar-line: #444444;
+  --theme-sidebar-tile: repeating-linear-gradient(135deg, rgba(28, 28, 28, 0.45) 0 1px, transparent 1px 5px), #fbfbfb;
+  --theme-sidebar-hover-background: rgba(28, 28, 28, 0.08);
+  --theme-sidebar-selected-background: repeating-linear-gradient(135deg, rgba(28, 28, 28, 0.32) 0 1.2px, transparent 1.2px 5px), #fbfbfb;
+  --theme-sidebar-selected-ink: #000000;
   --theme-sidebar-selected-edge: transparent;      /* Graphite outlines the selected item in pencil instead */
 
-  /* Buttons that are not the primary: paper with a pencil outline. Delete buttons: a tint of red. */
-  --theme-button-background: #f7f4ea;
-  --theme-button-border: #1f1e1b;
-  --theme-button-ink: #1f1e1b;
-  --theme-danger-soft: #f8e7e2;
-  --theme-danger-soft-border: #e0a99c;
-  --theme-danger-ink: #8f2f1f;
+  /* Buttons that are not the primary: paper with a pencil outline. Delete buttons: pale grey, with the red pencil for the text. */
+  --theme-button-background: #fbfbfb;
+  --theme-button-border: #1c1c1c;
+  --theme-button-ink: #1c1c1c;
+  --theme-danger-soft: #ececec;
+  --theme-danger-soft-border: #9a9a9a;
+  --theme-danger-ink: #8a3b32;
 
-  /* Focus: a dark outline with a pale blue halo. */
-  --theme-focus: var(--theme-accent-6);
-  --theme-focus-halo: rgba(142, 168, 207, 0.5);
+  /* Focus: a graphite outline with a grey halo. */
+  --theme-focus: #1c1c1c;
+  --theme-focus-halo: rgba(110, 110, 110, 0.4);
 
-  /* Meaning. Status ids in a default Redmine: 1 New, 2 In Progress, 3 Resolved, 4 Feedback, 5 Closed, 6 Rejected. */
-  --theme-status-new: #5f6c85;
-  --theme-status-in-progress: #3d5c92;
-  --theme-status-resolved: #2f7a4a;
-  --theme-status-feedback: #a8660a;
-  --theme-status-closed: #5f5b51;
-  --theme-status-rejected: #b2432f;
-  --theme-success: #2f7a4a;
-  --theme-warning: #c98a12;
-  --theme-danger: #c8503a;
-  --theme-danger-strong: #a63a27;
-  --theme-success-ink: #1d5a33;
-  --theme-success-soft: #e3efe4;
-  --theme-caution-ink: #6b4400;
-  --theme-caution-soft: #f5ecd2;
+  /* Meaning, in greys. Status ids in a default Redmine: 1 New, 2 In Progress, 3 Resolved, 4 Feedback, 5 Closed, 6 Rejected. */
+  --theme-status-new: #6e6e6e;
+  --theme-status-in-progress: #2e2e2e;
+  --theme-status-resolved: #4a4a4a;
+  --theme-status-feedback: #5a5a5a;
+  --theme-status-closed: #7a7a7a;
+  --theme-status-rejected: #1c1c1c;
+  --theme-success: #4a4a4a;
+  --theme-warning: #6e6e6e;
+  --theme-danger: #3a3a3a;
+  --theme-danger-strong: #1c1c1c;
+  --theme-success-ink: #2e2e2e;
+  --theme-success-soft: #e8e8e8;
+  --theme-caution-ink: #2e2e2e;
+  --theme-caution-soft: #e4e4e4;
   --theme-chip-ink-mix: #000000;
   --theme-chip-ink-share: 62%;
   --theme-chip-fill-share: 14%;
 
   /* Messages, avatars, activity markers, search highlights, diffs and the Gantt chart. */
-  --theme-flash-success-background: #e5efe4;
-  --theme-flash-success-border: #8dba95;
-  --theme-flash-success-ink: #1d5a33;
-  --theme-flash-warning-background: #f5ecd2;
-  --theme-flash-warning-border: #dcc07a;
-  --theme-flash-warning-ink: #5f3f00;
-  --theme-avatar-color-0: #b02a2a;
-  --theme-avatar-color-1: #a84d0a;
-  --theme-avatar-color-7: #b02455;
-  --theme-activity-edit-ink: #3d4f7a;
-  --theme-activity-wiki-ink: #7a3f22;
+  --theme-flash-success-background: #ececec;
+  --theme-flash-success-border: #8a8a8a;
+  --theme-flash-success-ink: #2e2e2e;
+  --theme-flash-warning-background: #e4e4e4;
+  --theme-flash-warning-border: #8a8a8a;
+  --theme-flash-warning-ink: #2e2e2e;
+  --theme-avatar-color-0: #4a4a4a;
+  --theme-avatar-color-1: #4a4a4a;
+  --theme-avatar-color-7: #4a4a4a;
+  --theme-activity-edit-ink: #333333;
+  --theme-activity-wiki-ink: #333333;
   --theme-search-highlight-ink: var(--theme-ink);
-  --theme-diff-removed: #f6e0dc;
-  --theme-diff-added: #dfeedd;
-  --theme-gantt-late: #d89a72;
-  --theme-gantt-late-label: #8a4a12;
+  --theme-diff-removed: #dcdcdc;
+  --theme-diff-added: #f0f0f0;
+  --theme-gantt-late: #8f8f8f;
+  --theme-gantt-late-label: #333333;
 
-  /* Shape and depth: small corners (the pencil outlines in flourishes.css make them uneven) and shadows like paper lifted off a desk. */
-  --theme-radius-highlight: 3px;
-  --theme-radius-inline: 4px;
-  --theme-radius-small: 6px;
-  --theme-radius: 8px;
-  --theme-radius-panel: 10px;
+  /* Shape and depth: small corners, and no drop shadows: depth is hatching, drawn in flourishes.css. */
+  --theme-radius-highlight: 2px;
+  --theme-radius-inline: 3px;
+  --theme-radius-small: 4px;
+  --theme-radius: 6px;
+  --theme-radius-panel: 8px;
   --theme-radius-pill: 999px;
   --theme-radius-round: 50%;
   --theme-border-width: 1px;
   --theme-border-style: solid;
-  --theme-shadow-card: 0 1px 1px rgba(0, 0, 0, 0.1), 0 10px 18px -12px rgba(60, 50, 30, 0.38);
-  --theme-shadow-popup: 0 12px 28px rgba(60, 50, 30, 0.28);
+  --theme-shadow-card: none;
+  --theme-shadow-popup: 5px 5px 0 rgba(28, 28, 28, 0.18);
   --theme-shadow-primary-button: none;
   --theme-shadow-header-scrolled: none;
   --theme-space-small: 8px;
@@ -150,55 +151,46 @@
   --theme-font-monospace: "Noto Sans Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   --theme-title-font: "Segoe Print", "Bradley Hand", "Chalkboard SE", "Marker Felt", "Comic Sans MS", cursive;
   --theme-title-weight: 400;
-  --theme-code-background: #efebe0;
-  --theme-code-ink: #1f1e1b;
-  --theme-syntax-keyword: #006b00;
+  --theme-code-background: #f0f0f0;
+  --theme-code-ink: #1c1c1c;
+  --theme-syntax-keyword: #333333;
 
   /* Icons drawn in a stylesheet carry their colour inside the image. */
-  --theme-select-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f1e1b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-  --theme-search-field-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f1e1b' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
-  --theme-project-jump-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231f1e1b' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  --theme-select-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231c1c1c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  --theme-search-field-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231c1c1c' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
+  --theme-project-jump-arrow-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231c1c1c' stroke-width='2.4'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
 
-  /* Redmine's grey ramp (--oc-gray-0 to -9) and its white: warm paper greys. */
-  --theme-redmine-white: #f7f4ea;
-  --theme-neutral-0: #efebe0;
-  --theme-neutral-1: #e9e4d6;
-  --theme-neutral-2: #e2dccb;
-  --theme-neutral-3: #d3ccb7;
-  --theme-neutral-4: #bdb59c;
-  --theme-neutral-5: #5f5b51;
-  --theme-neutral-6: #55514a;
-  --theme-neutral-7: #444139;
-  --theme-neutral-8: #35332e;
-  --theme-neutral-9: #1f1e1b;
-  --theme-neutral-9-rgb: 31, 30, 27;
+  /* Redmine's grey ramp (--oc-gray-0 to -9) and its white: neutral greys. */
+  --theme-redmine-white: #fbfbfb;
+  --theme-neutral-0: #f0f0f0;
+  --theme-neutral-1: #e8e8e8;
+  --theme-neutral-2: #dcdcdc;
+  --theme-neutral-3: #cccccc;
+  --theme-neutral-4: #b0b0b0;
+  --theme-neutral-5: #5a5a5a;
+  --theme-neutral-6: #555555;
+  --theme-neutral-7: #444444;
+  --theme-neutral-8: #333333;
+  --theme-neutral-9: #1c1c1c;
+  --theme-neutral-9-rgb: 28, 28, 28;
 
-  /* Graphite's own, used by flourishes.css and extra.js: the red pencil, the pencil line colour, the hatching, the paper grain
-     (a noise image blended into the page), the scribble under page titles, the tick in a closed issue's circle and the strip of
-     tape on the issue card. The images carry their colour inside, so the dark file swaps them. */
-  --theme-red-pencil: #b2432f;
-  --theme-red-pencil-ink: #8f2f1f;
-  --theme-pencil: #1f1e1b;
-  --theme-pencil-soft: rgba(60, 58, 52, 0.3);
-  --theme-pencil-dotted: rgba(60, 58, 52, 0.45);
-  --theme-hatch: repeating-linear-gradient(135deg, rgba(40, 38, 34, 0.22) 0 1px, transparent 1px 5px);
-  --theme-paper-blend: multiply;
-  --theme-paper-grain-opacity: 0.5;
-  --theme-paper-grain-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22320%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%223%22%20seed%3D%223%22%2F%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%200%200%200%200%20.32%200%200%200%200%20.27%200%200%200%20.55%200%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22320%22%20height%3D%22320%22%20filter%3D%22url%28%23n%29%22%2F%3E%3C%2Fsvg%3E");
-  --theme-paper-light: radial-gradient(ellipse at 20% 10%, rgba(255, 255, 255, 0.5), transparent 55%), radial-gradient(ellipse at 90% 100%, rgba(120, 100, 60, 0.14), transparent 60%);
-  --theme-scribble-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%2210%22%20viewBox%3D%220%200%20240%2010%22%3E%3Cpath%20d%3D%22M2%206%20C30%202%2060%209%2092%205%20S160%202%20190%206%20S228%204%20238%205%22%20fill%3D%22none%22%20stroke%3D%22%233a3935%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.75%22%2F%3E%3Cpath%20d%3D%22M6%208%20C50%206%20110%209%20170%207%20S220%208%20236%207%22%20fill%3D%22none%22%20stroke%3D%22%233a3935%22%20stroke-width%3D%221%22%20opacity%3D%22.5%22%2F%3E%3C%2Fsvg%3E");
-  --theme-tick-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M4%2013%20C7%2015%208%2017%209.5%2019%20C12%2012%2016%207%2021%203%22%20fill%3D%22none%22%20stroke%3D%22%232a2a2a%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
-  --theme-tape-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2226%22%3E%3Crect%20width%3D%2296%22%20height%3D%2226%22%20fill%3D%22%23d6c48c%22%20opacity%3D%22.7%22%2F%3E%3C%2Fsvg%3E");
+  /* Graphite's own, used by flourishes.css and extra.js. The images carry their colour inside, so the dark file swaps them. */
+  --theme-red-pencil-ink: #8a3b32;                 /* overdue dates and error text, the only colour left */
+  --theme-pencil: #1c1c1c;
+  --theme-pencil-soft: #8a8a8a;
+  --theme-pencil-dotted: rgba(60, 60, 60, 0.5);
+  --theme-hatch: repeating-linear-gradient(135deg, rgba(28, 28, 28, 0.26) 0 1px, transparent 1px 5px);
+  --theme-crosshatch: repeating-linear-gradient(135deg, rgba(28, 28, 28, 0.5) 0 1px, transparent 1px 4px), repeating-linear-gradient(45deg, rgba(28, 28, 28, 0.4) 0 1px, transparent 1px 4px);
+  --theme-sketch-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none' stroke='%231c1c1c' stroke-linecap='round' stroke-linejoin='round'%3E %3Cg stroke-width='9'%3E%3Cpath d='M2 32 C50 27 100 35 150 30 S215 32 238 29'/%3E%3Cpath d='M209 3 C205 60 213 120 208 178 S211 222 207 238'/%3E%3Cpath d='M236 209 C190 213 130 206 80 211 S30 208 3 212'/%3E%3Cpath d='M31 237 C27 180 34 120 29 70 S32 25 30 5'/%3E%3C/g%3E %3Cg stroke-width='4' opacity='.55'%3E%3Cpath d='M14 38 C70 34 120 40 170 35'/%3E%3Cpath d='M203 20 C200 80 205 130 202 170'/%3E%3Cpath d='M222 213 C170 218 110 213 60 217'/%3E%3Cpath d='M36 220 C33 160 38 110 34 60'/%3E%3C/g%3E%3C/svg%3E ");
+  --theme-row-rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='6' viewBox='0 0 400 6' preserveAspectRatio='none' fill='none' stroke='%238a8a8a' stroke-linecap='round'%3E%3Cpath d='M0 2.6 C80 1.8 150 3.6 220 2.8 S340 2.2 400 3.2' stroke-width='1.4'/%3E%3Cpath d='M30 4.4 C120 4 200 4.7 330 4.1' stroke-width='0.7' opacity='.6'/%3E%3C/svg%3E");
+  --theme-head-rule-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='8' viewBox='0 0 400 8' preserveAspectRatio='none' fill='none' stroke='%231c1c1c' stroke-linecap='round'%3E%3Cpath d='M0 2.6 C90 1.6 160 3.8 240 2.8 S350 2 400 3.4' stroke-width='2.2'/%3E%3Cpath d='M12 6 C100 5.2 200 6.4 320 5.6' stroke-width='1.1' opacity='.8'/%3E%3C/svg%3E");
+  --theme-tape-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2296%22%20height%3D%2226%22%3E%3Crect%20width%3D%2296%22%20height%3D%2226%22%20fill%3D%22%23d0d0d0%22%20opacity%3D%22.75%22%2F%3E%3Cpath%20d%3D%22M0%205%20L96%205%20M0%2021%20L96%2021%22%20stroke%3D%22%23999%22%20stroke-width%3D%22.6%22%2F%3E%3C%2Fsvg%3E");
   --theme-tape-opacity: 1;
-  --theme-tick-filter: none;
-  --theme-sketchy-corners: 255px 15px 225px 15px / 15px 225px 15px 255px;           /* buttons, the selected tab */
-  --theme-sketchy-corners-field: 4px 10px 5px 9px / 9px 5px 10px 4px;               /* fields */
-  --theme-sketchy-corners-card: 3px 14px 4px 12px / 12px 4px 14px 3px;              /* the issue card, sign-in, messages */
-  --theme-avatar-fill: #55514a;
+  --theme-avatar-fill: #4a4a4a;
   --theme-initials-fill: var(--theme-hatch);
-  --theme-initials-ink: #1f1e1b;
-  --theme-phone-menu-background: #2b2a27;
-  --theme-phone-menu-ink: #e8e3d4;
+  --theme-initials-ink: #1c1c1c;
+  --theme-phone-menu-background: #2a2a2a;
+  --theme-phone-menu-ink: #e6e6e6;
 }
 
 /* Redmine's palette, pointed at the tokens. Redmine 7 colours itself with the Open Color variables (--oc-*) and a few

@@ -3,44 +3,34 @@
  * GNU General Public License, version 2 or later. See the LICENSE file.
  * Generated from the shared base of the Rubylode themes: a change made here is overwritten by the next build. */
 
-/* Graphite's own touches, the ones tokens cannot express: pencil on paper.
- *  1. The paper: a fine grain over the page, light from the top left, and the sidebar's margin line drawn in pencil.
- *  2. Handwriting for titles, menus and buttons, and a scribble under the page title.
- *  3. Pencil outlines with uneven corners on buttons, fields, messages, the sign-in card and the issue card (with its strip of tape).
- *  4. The issue list as a to-do list: a hand-drawn check, a hatched circle for the status, a flag for the priority.
- *  5. The assignee initials and the view tabs that extra.js adds.
- *  6. The phone slide-out menu, dark in both schemes. */
+/* Graphite's own touches, the ones tokens cannot express: a pencil drawing on a sheet of paper.
+ *  1. The margin line down the sidebar, drawn in pencil.
+ *  2. Handwriting for titles, menus and buttons, and a pencil stroke under the page title.
+ *  3. Sketched outlines (SVG border images with double strokes and overshooting corners) on buttons, fields, messages, the
+ *     sign-in card and the issue card, which also has a strip of tape and hatching in place of a shadow.
+ *  4. Table rules drawn as strokes, and the issue list as a to-do list: a hand-drawn check circle, status circle, priority flag
+ *     and tracker square, all masks painted in the pencil colour.
+ *  5. Links underlined in pencil.
+ *  6. The initials and the view tabs that extra.js adds.
+ *  7. The phone slide-out menu, dark in both schemes. */
+
+:root {
+  --graphite-mask-ring: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 C17 2.6 21.4 7 21 12.2 C20.6 17.4 16.6 21.2 11.6 20.9 C6.6 20.6 3 16.6 3.2 11.6 C3.4 6.6 7.2 3.4 12.4 3.1'/%3E%3Cpath d='M5.8 8 C7 5.8 9.6 4.6 12.6 4.8' stroke-width='0.8'/%3E%3C/svg%3E");
+  --graphite-mask-ring-hatched: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 C17 2.6 21.4 7 21 12.2 C20.6 17.4 16.6 21.2 11.6 20.9 C6.6 20.6 3 16.6 3.2 11.6 C3.4 6.6 7.2 3.4 12.4 3.1'/%3E%3Cpath d='M5.8 8 C7 5.8 9.6 4.6 12.6 4.8' stroke-width='0.8'/%3E%3Cpath d='M7.5 15.5 L15.5 7.5 M9.5 18.5 L18.5 9.5 M12.5 19 L19 12.5 M6 11.5 L11.5 6' stroke-width='1.2'/%3E%3C/svg%3E");
+  --graphite-mask-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 C17 2.6 21.4 7 21 12.2 C20.6 17.4 16.6 21.2 11.6 20.9 C6.6 20.6 3 16.6 3.2 11.6 C3.4 6.6 7.2 3.4 12.4 3.1'/%3E%3Cpath d='M5.8 8 C7 5.8 9.6 4.6 12.6 4.8' stroke-width='0.8'/%3E%3Cpath d='M7 8 L16 5 M6 11 L18 7 M5.5 14 L19 9 M6 17 L19.5 12 M8 19.5 L19 15 M12 20.5 L18 17.5' stroke-width='2.4'/%3E%3C/svg%3E");
+  --graphite-mask-ring-tick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 C17 2.6 21.4 7 21 12.2 C20.6 17.4 16.6 21.2 11.6 20.9 C6.6 20.6 3 16.6 3.2 11.6 C3.4 6.6 7.2 3.4 12.4 3.1'/%3E%3Cpath d='M5.8 8 C7 5.8 9.6 4.6 12.6 4.8' stroke-width='0.8'/%3E%3Cpath d='M7 12.5 C9 14 10 15.5 11 17.2 C13 11 16 7 21.5 3.2' stroke-width='2.2'/%3E%3C/svg%3E");
+  --graphite-mask-box: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4.5 L20.4 4 L19.8 20 L4.2 20.4 L4.4 3.6'/%3E%3C/svg%3E");
+  --graphite-mask-box-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4.5 L20.4 4 L19.8 20 L4.2 20.4 L4.4 3.6'/%3E%3Cpath d='M5.5 8 L18.5 6 M5.5 12 L19 10 M5.5 16 L19 14 M7 19.5 L18 18' stroke-width='2.4'/%3E%3C/svg%3E");
+  --graphite-mask-flag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 21.5 L6.6 2.8'/%3E%3Cpath d='M6.6 4 C10 2.4 14 6.4 19 4.2 L18.4 12.2 C14 14.2 10 10.6 6.8 12.2' stroke-width='1.6'/%3E%3C/svg%3E");
+  --graphite-mask-flag-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 21.5 L6.6 2.8'/%3E%3Cpath d='M6.6 4 C10 2.4 14 6.4 19 4.2 L18.4 12.2 C14 14.2 10 10.6 6.8 12.2' stroke-width='1.6'/%3E%3Cpath d='M8 6.4 L17.4 6 M8 8.4 L17.6 8 M8 10.4 L17.6 10' stroke-width='1.8'/%3E%3C/svg%3E");
+  --graphite-mask-underline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 12' preserveAspectRatio='none' fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M3 7 C40 3 90 9.4 140 5 S210 4 238 6.4' stroke-width='3'/%3E%3Cpath d='M10 10.2 C80 8 160 11 230 8.6' stroke-width='1.4'/%3E%3C/svg%3E");
+}
 
 /* ==========================================================================
-   1. The paper
+   1. The margin line
    ========================================================================== */
-body {
-  background-color: var(--theme-page);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px);
-  background-size: 5px 5px;
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: var(--theme-paper-grain-image), var(--theme-paper-light);
-  mix-blend-mode: var(--theme-paper-blend);
-  opacity: var(--theme-paper-grain-opacity);
-}
-#wrapper { position: relative; z-index: 1; background: transparent; }
-#main { background: transparent; }
-:root { --theme-header-background: transparent; }
+#wrapper { position: relative; }
 @media screen and (min-width: 1100px) {
-  body:not(.controller-account) #wrapper {
-    background: linear-gradient(
-      to right,
-      var(--theme-sidebar-background) calc(var(--theme-sidebar-width) - 1px),
-      transparent var(--theme-sidebar-width)
-    );
-  }
-  /* The sheet's margin line, drawn with a pencil: a plain line that the filter makes uneven once extra.js has added it. */
   body:not(.controller-account) #wrapper::before {
     content: "";
     position: absolute;
@@ -53,62 +43,70 @@ body::before {
   }
   body:not(.controller-account) #header h1,
   body:not(.controller-account):not(.has-main-menu) #header h1 { font-family: var(--theme-title-font); font-size: 1.7rem; font-weight: 400; }
-  body:not(.controller-account) #header h1::before { border: 1.5px solid var(--theme-pencil); border-radius: var(--theme-sketchy-corners-card); }
-  body:not(.controller-account) #main-menu li a.selected,
-  body:not(.controller-account) #main-menu li a.selected:hover,
-  body:not(.controller-account) .general-menu .top-menu__links a.home,
-  body:not(.controller-account) .general-menu .top-menu__links a.my-page { font-weight: 400; }
+  body:not(.controller-account) #header h1::before { border: 1.5px solid var(--theme-pencil); border-radius: 3px 6px 4px 6px / 6px 3px 6px 4px; }
   body:not(.controller-account) #main-menu li a.selected,
   body:not(.controller-account) #main-menu li a.selected:hover {
     border: 1.5px solid var(--theme-pencil);
-    border-radius: var(--theme-sketchy-corners);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     box-shadow: none;
     font-weight: 700;
   }
   body:not(.controller-account) #main-menu li a.new-object,
   body:not(.controller-account) #main-menu li a.new-object:hover {
     border: 1.5px solid var(--theme-pencil);
-    border-radius: var(--theme-sketchy-corners);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   }
 }
 
 /* ==========================================================================
-   2. Handwriting and the scribble under the title
+   2. Handwriting and the pencil stroke under the title
    ========================================================================== */
 #main-menu a, .top-menu__links a, #sidebar h3, nav.view-tabs a, table.list th, #admin-menu a, #account .dropdown-trigger {
   font-family: var(--theme-title-font);
 }
 #content > h2 {
+  position: relative;
   display: block;
   inline-size: fit-content;
   max-inline-size: 100%;
-  padding-block-end: 10px;
+  padding-block-end: 12px;
   font-size: 2.1rem;
   font-weight: 400;
   letter-spacing: -0.01em;
-  background: var(--theme-scribble-image) left bottom / 100% 10px no-repeat;
+}
+#content > h2::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  block-size: 12px;
+  background: var(--theme-pencil);
+  mask: var(--graphite-mask-underline) left bottom / 100% 100% no-repeat;
+  -webkit-mask: var(--graphite-mask-underline) left bottom / 100% 100% no-repeat;
+  opacity: 0.85;
 }
 #content h3, .wiki h1, .wiki h2, .wiki h3, .wiki h4 { font-weight: 400; }
 
 /* ==========================================================================
-   3. Pencil outlines
+   3. Sketched outlines
    ========================================================================== */
 input[type=text], input[type=password], input[type=email], input[type=number], input[type=search], input[type=date],
 input[type=url], input[type=tel], input:not([type]), select, textarea {
-  border: 1.5px solid var(--theme-pencil);
-  border-radius: var(--theme-sketchy-corners-field);
+  border: 2px solid var(--theme-pencil);
+  border-image: var(--theme-sketch-border-image) 60 / 7px / 2px stretch;
+  border-radius: 0;
 }
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=search]:focus,
 input[type=date]:focus, input[type=url]:focus, input:not([type]):focus, select:focus, textarea:focus {
-  outline: 2px solid var(--theme-pencil);
-  outline-offset: 1px;
-  border-color: var(--theme-pencil);
+  outline: 2px dotted var(--theme-focus);
+  outline-offset: 4px;
   box-shadow: none;
 }
 input[type=submit], input[type=button], input[type=reset],
 button:not(.tab-left):not(.tab-right):not(.icon-only):not(.ui-button):not(.ui-dialog-titlebar-close):not(.jstElements button), a.button {
-  border: 1.8px solid var(--theme-pencil);
-  border-radius: var(--theme-sketchy-corners);
+  border: 2px solid var(--theme-pencil);
+  border-image: var(--theme-sketch-border-image) 60 / 7px / 2px stretch;
+  border-radius: 0;
   font-family: var(--theme-title-font);
   font-weight: 400;
   padding-inline: 16px;
@@ -116,33 +114,44 @@ button:not(.tab-left):not(.tab-right):not(.icon-only):not(.ui-button):not(.ui-di
 input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover,
 button:not(.tab-left):not(.tab-right):not(.icon-only):not(.ui-button):not(.ui-dialog-titlebar-close):not(.jstElements button):hover, a.button:hover {
   background-image: var(--theme-hatch);
-  border-color: var(--theme-pencil);
 }
+input[type=submit]:focus-visible, input[type=button]:focus-visible, button:focus-visible, a.button:focus-visible { outline: 2px dotted var(--theme-focus); outline-offset: 4px; }
 #content > .contextual > a, #content > .contextual > .drdn > .drdn-trigger, div.issue .contextual > a, #sidebar .contextual > a,
 #content a.button, #query_form p.buttons a, #query_form_with_buttons p.buttons a, p.buttons > a.icon {
-  border: 1.5px solid var(--theme-pencil);
-  border-radius: var(--theme-sketchy-corners);
+  border: 2px solid var(--theme-pencil);
+  border-image: var(--theme-sketch-border-image) 60 / 7px / 2px stretch;
+  border-radius: 0;
   font-family: var(--theme-title-font);
 }
 #content > .contextual > a:hover, div.issue .contextual > a:hover, #sidebar .contextual > a:hover { background-image: var(--theme-hatch); }
-div.flash, #errorExplanation { border: 1.5px solid var(--theme-pencil); border-radius: var(--theme-sketchy-corners-card); }
-#login-form {
-  border: 1.8px solid var(--theme-pencil);
-  border-radius: var(--theme-sketchy-corners-card);
-  box-shadow: var(--theme-shadow-card);
+div.flash, #errorExplanation {
+  border: 2px solid var(--theme-pencil);
+  border-image: var(--theme-sketch-border-image) 60 / 9px / 3px stretch;
+  border-radius: 0;
 }
 span.badge.badge-count { background-color: var(--theme-pencil); color: var(--theme-page); }
+.pagination ul.pages li.current, .pagination ul.pages li.current span, .pagination ul.pages li.current a { color: var(--theme-ink-on-primary); }
 /* Avatars are drawn in one pencil grey, with white initials, instead of Redmine's eight colours. */
 span[class*="avatar-color-"][class*="avatar-color-"] { background-color: var(--theme-avatar-fill); color: #ffffff; }
+.avatar-color-5.avatar-color-5 { color: #ffffff; }
+input[type=checkbox], input[type=radio] { accent-color: var(--theme-pencil); }
 
-/* The issue card: a sheet with a pencil outline, held down by a strip of tape. */
-div.issue.details {
+/* The issue card and the sign-in card: a sketched outline and hatching along two edges where a shadow would be. */
+div.issue.details, #login-form {
   position: relative;
-  border: 1.8px solid var(--theme-pencil);
-  border-inline-start-width: 1.8px;
-  border-radius: var(--theme-sketchy-corners-card);
-  padding: 24px 26px 18px;
-  box-shadow: var(--theme-shadow-card);
+  border: 2px solid var(--theme-pencil);
+  border-image: var(--theme-sketch-border-image) 60 / 12px / 4px stretch;
+  border-radius: 0;
+  box-shadow: none;
+}
+div.issue.details { padding: 24px 26px 18px; }
+div.issue.details::after, #login-form::after {
+  content: "";
+  position: absolute;
+  inset: 9px -9px -9px 9px;
+  background: var(--theme-crosshatch);
+  clip-path: polygon(calc(100% - 9px) 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - 9px), calc(100% - 9px) calc(100% - 9px));
+  pointer-events: none;
 }
 div.issue.details::before {
   content: "";
@@ -154,53 +163,58 @@ div.issue.details::before {
   background: var(--theme-tape-image);
   opacity: var(--theme-tape-opacity);
   transform: rotate(-3deg);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   pointer-events: none;
 }
 
 /* ==========================================================================
-   4. The issue list as a to-do list on paper
+   4. Table rules and the issue list as a to-do list
    ========================================================================== */
 table.list { border: 0; border-radius: 0; box-shadow: none; background: transparent; }
 table.list > thead > tr > th {
-  background: transparent;
+  background: var(--theme-head-rule-image) left bottom / 100% 8px no-repeat;
   color: var(--theme-ink);
   font-size: 0.9375rem;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
-  border-block-end: 2px solid var(--theme-pencil);
+  border-block-end: 0;
+  padding-block-end: 12px;
 }
-table.list > tbody > tr > td { border-block-start: 1.5px solid var(--theme-pencil-soft); }
+table.list > tbody > tr > td { border-block-start: 0; background-image: var(--theme-row-rule-image); background-repeat: no-repeat; background-size: 100% 6px; background-position: left top; }
 table.list > thead > tr > th + th, table.list > tbody > tr > td + td { border-inline-start: 1px dotted var(--theme-pencil-dotted); }
-table.list > tbody > tr.group > td { border-inline-start: 0; }
-table.list tr.group > td { background: transparent; padding-block: 18px 6px; border-block-start: 0; }
+table.list > tbody > tr.group > td { border-inline-start: 0; background-image: none; }
+table.list tr.group > td { background-color: transparent; padding-block: 18px 6px; }
 table.list tr.group span.name { font-family: var(--theme-title-font); font-size: 1.15rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
 
-/* A hand-drawn round check before each subject, ticked in pencil when the issue is closed */
-table.list.issues td.subject::before {
+/* A drawn circle before each subject, with a pencil tick through it when the issue is closed */
+table.list.issues td.subject::before,
+table.list.issues > tbody > tr.issue > td.status::before,
+table.list.issues > tbody > tr.issue[class*="priority-"] > td.priority::before,
+table.list.issues td.tracker::before {
   content: "";
   display: inline-block;
   box-sizing: border-box;
-  inline-size: 20px;
-  block-size: 20px;
-  margin-inline-end: 9px;
-  border: 1.8px solid var(--theme-pencil);
-  border-radius: 52% 48% 55% 45% / 48% 55% 45% 52%;
-  vertical-align: -5px;
-  background: transparent center / 90% no-repeat;
+  border: 0;
+  border-radius: 0;
+  background: var(--theme-pencil);
+  mask: var(--glyph, var(--graphite-mask-ring)) center / contain no-repeat;
+  -webkit-mask: var(--glyph, var(--graphite-mask-ring)) center / contain no-repeat;
 }
-table.list.issues tr.issue.closed td.subject::before { background-image: var(--theme-tick-image); filter: var(--theme-tick-filter); }
+table.list.issues td.subject::before { inline-size: 20px; block-size: 20px; margin-inline-end: 9px; vertical-align: -5px; }
+table.list.issues tr.issue.closed td.subject::before { --glyph: var(--graphite-mask-ring-tick); }
 table.list.issues tr.issue.closed td.subject a { color: var(--theme-ink-muted); text-decoration: line-through; text-decoration-thickness: 1px; }
 table.list.issues tr.issue.overdue td.due_date { color: var(--theme-red-pencil-ink); font-weight: 700; }
 /* A child row keeps the arrow the base draws in its indent */
-table.list.issues tr.idnt td.subject::before { inline-size: 16px; block-size: auto; margin-inline: -18px 0; border: 0; border-radius: 0; background: none; filter: none; vertical-align: baseline; }
+table.list.issues tr.idnt td.subject::before { inline-size: 16px; block-size: auto; margin-inline: -18px 0; background: none; mask: none; -webkit-mask: none; vertical-align: baseline; }
 
-/* Status: a circle in pencil. Empty for New, hatched for In Progress and Feedback, filled for Resolved and Closed, red for Rejected. */
+/* Status: a circle. Empty for New, hatched for In Progress and Feedback, filled for Resolved and Closed, crossed out for Rejected. */
 table.list.issues > tbody > tr.issue > td.status,
 table.list.issues > tbody > tr.issue:is(.priority-1, .priority-2, .priority-3, .priority-4, .priority-5) > td.priority {
   inline-size: auto;
-  background-image: none;
+  background-image: var(--theme-row-rule-image);
+  background-size: 100% 6px;
+  background-position: left top;
+  background-origin: border-box;
   background-clip: border-box;
   color: var(--theme-ink);
   font-size: inherit;
@@ -208,48 +222,36 @@ table.list.issues > tbody > tr.issue:is(.priority-1, .priority-2, .priority-3, .
 }
 table.list.issues > tbody > tr.issue > td.status::after,
 table.list.issues > tbody > tr.issue > td.priority::after { display: none; }
-table.list.issues > tbody > tr.issue { --state-fill: var(--theme-pencil); --state-line: var(--theme-pencil); }
-table.list.issues > tbody > tr.issue.status-1 { --state-fill: transparent; }
-table.list.issues > tbody > tr.issue:is(.status-2, .status-4) { --state-fill: var(--theme-hatch); }
-table.list.issues > tbody > tr.issue.status-6 { --state-fill: var(--theme-red-pencil); --state-line: var(--theme-red-pencil); }
-table.list.issues > tbody > tr.issue > td.status::before {
-  box-sizing: border-box;
-  inline-size: 13px;
-  block-size: 13px;
-  margin: 0 7px 0 0;
-  border: 2px solid var(--state-line);
-  border-radius: var(--theme-radius-round);
-  background: var(--state-fill);
-  vertical-align: -2px;
-}
+table.list.issues > tbody > tr.issue > td.status::before { --glyph: var(--graphite-mask-ring); inline-size: 14px; block-size: 14px; margin: 0 7px 0 0; vertical-align: -2px; }
+table.list.issues > tbody > tr.issue:is(.status-2, .status-4) > td.status::before { --glyph: var(--graphite-mask-ring-hatched); }
+table.list.issues > tbody > tr.issue:is(.status-3, .status-5, .status-6) > td.status::before { --glyph: var(--graphite-mask-filled); }
 
-/* Priority: a flag, in pencil for the low levels and in red pencil for Urgent and Immediate. */
-table.list.issues > tbody > tr.issue { --priority-colour: var(--theme-ink-muted); }
-table.list.issues > tbody > tr.issue:is(.priority-4, .priority-5) { --priority-colour: var(--theme-red-pencil-ink); }
-table.list.issues > tbody > tr.issue[class*="priority-"] > td.priority::before {
-  content: "\2691";
-  inline-size: auto;
-  block-size: auto;
-  margin: 0 6px 0 0;
-  background: none;
-  color: var(--priority-colour);
-  vertical-align: baseline;
-}
+/* Priority: a flag, drawn in outline for the low levels and filled in for Urgent and Immediate. */
+table.list.issues > tbody > tr.issue[class*="priority-"] > td.priority::before { --glyph: var(--graphite-mask-flag); inline-size: 15px; block-size: 15px; margin: 0 6px 0 0; vertical-align: -2px; opacity: 0.75; }
+table.list.issues > tbody > tr.issue:is(.priority-4, .priority-5) > td.priority::before { --glyph: var(--graphite-mask-flag-filled); opacity: 1; }
 
-/* Tracker: a small square, red pencil for bugs */
-table.list.issues td.tracker::before {
-  content: "";
-  display: inline-block;
-  inline-size: 10px;
-  block-size: 10px;
-  margin-inline-end: 7px;
-  border-radius: 3px;
-  background: var(--theme-ink-soft);
-}
-table.list.issues tr.issue.tracker-1 td.tracker::before { background: var(--theme-red-pencil); }
+/* Tracker: a small drawn square, filled in for bugs */
+table.list.issues td.tracker::before { --glyph: var(--graphite-mask-box); inline-size: 13px; block-size: 13px; margin-inline-end: 7px; vertical-align: -1px; }
+table.list.issues tr.issue.tracker-1 td.tracker::before { --glyph: var(--graphite-mask-box-filled); }
 
 /* ==========================================================================
-   5. The initials and the view tabs (extra.js)
+   5. Links underlined in pencil
+   ========================================================================== */
+#content a:where(:link, :visited):not(.button, .icon, .tab-left, .tab-right, .selected, .assignee-name),
+#sidebar a:where(:link, :visited):not(.button, .icon, .selected),
+.flash a:where(:link, :visited) {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--theme-pencil-soft);
+  text-underline-offset: 0.2em;
+}
+#content a:where(:link, :visited):not(.button, .icon, .selected):hover,
+#sidebar a:where(:link, :visited):not(.button, .icon, .selected):hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+#content :is(.tabs, .contextual, .pagination, .view-tabs, .tag-label-color, .tag-label, .toggle-multiselect) a:where(:link, :visited),
+#content table.list th a, #content table.list tr.issue td.id a, #content .wiki-anchor, #content a.user.active img + * { text-decoration-line: none; }
+
+/* ==========================================================================
+   6. The initials and the view tabs (extra.js)
    ========================================================================== */
 .assignee-initials {
   display: inline-grid;
@@ -266,7 +268,6 @@ table.list.issues tr.issue.tracker-1 td.tracker::before { background: var(--them
   font-weight: 700;
   vertical-align: middle;
 }
-/* In a list the initials stand in for the name, which stays in the page for screen readers and shows as a tooltip. */
 table.list td.assigned_to a.assignee-name {
   position: absolute;
   inline-size: 1px;
@@ -277,19 +278,13 @@ table.list td.assigned_to a.assignee-name {
 }
 table.list td.assigned_to { white-space: nowrap; }
 
-/* The tabs above the issue list: Issues, Gantt, Calendar, Activity */
-nav.view-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-block: 0 14px; border-block-end: 1.5px solid var(--theme-pencil-soft); }
-nav.view-tabs a, nav.view-tabs a:visited {
-  padding: 8px 14px;
-  color: var(--theme-ink-muted);
-  border-block-end: 2px solid transparent;
-  margin-block-end: -1.5px;
-}
+nav.view-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-block: 0 14px; background: var(--theme-row-rule-image) left bottom / 100% 6px no-repeat; padding-block-end: 4px; }
+nav.view-tabs a, nav.view-tabs a:visited { padding: 8px 14px; color: var(--theme-ink-muted); border-block-end: 2px solid transparent; }
 nav.view-tabs a:hover { color: var(--theme-ink); text-decoration: none; }
 nav.view-tabs a.selected { color: var(--theme-ink); border-color: var(--theme-pencil); font-weight: 700; }
 
 /* ==========================================================================
-   6. The phone slide-out menu: dark in both schemes
+   7. The phone slide-out menu: dark in both schemes
    ========================================================================== */
 body .flyout-menu { background-color: var(--theme-phone-menu-background); color: var(--theme-phone-menu-ink); }
 body .flyout-menu h3 { background-color: rgba(255, 255, 255, 0.07); border-block-color: var(--theme-phone-menu-background); color: var(--theme-phone-menu-ink); }

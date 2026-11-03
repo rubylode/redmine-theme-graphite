@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <title>Graphite</title>
   <g transform="rotate(45 16 16)" fill="none" stroke="#1f1e1b" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M13 4.5h6v17h-6z" fill="#f7f4ea"/>
-    <path d="M13 21.5l3 6.5 3-6.5z" fill="#d9d2bd"/>
+    <path d="M13 4.5h6v17h-6z" fill="#f4f4f4"/>
+    <path d="M13 21.5l3 6.5 3-6.5z" fill="#c8c8c8"/>
     <path d="M15.2 26.2l.8 1.8.8-1.8z" fill="#1f1e1b"/>
     <path d="M13 8.5h6M16 4.5v17" stroke-width="1"/>
   </g>
