@@ -1,6 +1,6 @@
 # Rubylode Graphite for Redmine
 
-A paper-and-pencil theme for Redmine 7 and up: grain on the page, pencil lines with uneven corners, hatched shading, handwritten titles and a red pencil for the main action, with the project menu as a sidebar on wide screens.
+A pencil-drawing theme for Redmine 7 and up: graphite greys on a cool near-white sheet, sketched double-stroke outlines, hatching in place of shadows, handwritten titles, and the project menu as a sidebar on wide screens.
 
 It is plain CSS plus one small script (`javascripts/theme.js`), with no plugin, no build step and no change to Redmine itself.
 The script only reads the page: it puts a status dot beside the group name in an issue list grouped by status and hatched initials beside assignees in lists. It also
@@ -49,13 +49,14 @@ The screenshots come from the demo Redmine in this repository; the people, proje
 
 ## What it looks like
 
-- The page is paper with a fine grain, lit from the top left. Text is near-black on it and links are a blue pencil. The main action button is a red pencil.
-- From 1100px up, the project is a sidebar down the left: a hatched tile, the project name in handwriting, the "+" button and the menu. The current item is outlined in pencil and shaded with hatching. A margin line runs down the edge of the sheet. The global links, the New issue button, the search, the project switcher and your avatar are one bar across the top. Below 1100px the project name and tabs sit in a bar under the top bar, as in Redmine.
-- Titles, menus, table headings and buttons are in handwriting, taken from your system's own fonts (Segoe Print, Bradley Hand, Chalkboard SE, Marker Felt, Comic Sans MS or the generic cursive), so they differ from one machine to the next. Running text is Noto Sans.
-- The page title has a scribble under it. Buttons, fields, messages and the sign-in card have pencil outlines with uneven corners.
-- The issue list reads as a to-do list: a hand-drawn round check before each subject, ticked when the issue is closed, a circle for the status (empty, hatched or filled), a flag for the priority (red for Urgent and Immediate), a small square for the tracker and a hatched circle with the assignee's initials. Rows are separated by pencil lines, with dotted column lines.
+- The page is a flat, cool near-white sheet in light and dark graphite in dark. There is no tint and no texture, and every colour in the chrome is a grey from light pencil to near-black. The one colour left is a muted red pencil for overdue dates and error text.
+- Buttons, fields, messages, the issue card and the sign-in card are outlined with sketched strokes: double lines, uneven weight and corners that overshoot. They are SVG border images, so they stretch to any size.
+- Depth is hatching, not shadow: the issue card and the sign-in card have cross-hatching along two edges, the issue card has a strip of grey tape, and the selected sidebar item is filled with diagonal strokes.
+- The primary button is dark graphite with light text (the other way round in dark). Links are graphite with a pencil underline. Focus is a dotted graphite outline.
+- From 1100px up, the project is a sidebar down the left: a hatched tile, the project name in handwriting, the "+" button and the menu, with a margin line down the edge of the sheet. The global links, the New issue button, the search, the project switcher and your avatar are one bar across the top. Below 1100px the project name and tabs sit in a bar under the top bar, as in Redmine.
+- Titles, menus, table headings and buttons are in handwriting, taken from your system's own fonts (Segoe Print, Bradley Hand, Chalkboard SE, Marker Felt, Comic Sans MS or the generic cursive), so they differ from one machine to the next. Running text is Noto Sans. The page title has a pencil stroke under it.
+- The issue list reads as a to-do list: table rules are drawn strokes, each subject has a hand-drawn circle that is ticked when the issue is closed, the status is a circle (empty, hatched or filled), the priority is a flag (filled for Urgent and Immediate), the tracker is a small square and the assignee is a hatched circle with initials.
 - Issues, Gantt, Calendar and Activity are tabs above the issue list.
-- An issue is a sheet with a pencil outline, held down by a strip of tape.
 - The phone slide-out menu is dark, in light mode too.
 
 ## Install
@@ -105,11 +106,11 @@ start with `--theme-` and are the same in every Rubylode theme. The main ones:
 
 | Token | What it is |
 |---|---|
-| `--theme-page`, `--theme-surface`, `--theme-surface-sunken`, `--theme-surface-hover` | the paper, the panels, stripes and the attribute panel, hovered rows |
+| `--theme-page`, `--theme-surface`, `--theme-surface-sunken`, `--theme-surface-hover` | the sheet, the panels, stripes and the attribute panel, hovered rows |
 | `--theme-line`, `--theme-line-soft`, `--theme-line-strong` | panel borders and row lines, column lines, field borders |
 | `--theme-ink`, `--theme-ink-soft`, `--theme-ink-muted` | text, secondary text, labels and notes |
-| `--theme-accent-0` to `--theme-accent-9` | the blue pencil ramp; `--theme-link` and Redmine's blue ramp point into it |
-| `--theme-primary`, `--theme-primary-hover` | the red pencil: the main action button, the New issue button, the current page |
+| `--theme-accent-0` to `--theme-accent-9` | the graphite ramp, light pencil to near-black |
+| `--theme-primary`, `--theme-primary-hover` | dark graphite: the main action button, the New issue button, the current page |
 | `--theme-sidebar-width`, `--theme-sidebar-background`, `--theme-sidebar-selected-background` | the sidebar and its hatched selected item |
 | `--theme-status-new`, `-in-progress`, `-resolved`, `-feedback`, `-closed`, `-rejected` | status colours, by Redmine's default status ids 1 to 6 |
 | `--theme-radius-small`, `--theme-radius`, `--theme-radius-panel` | corners of fields, cards and panels |
@@ -119,9 +120,9 @@ start with `--theme-` and are the same in every Rubylode theme. The main ones:
 The rest (messages, avatars, diffs, the Gantt chart, the header heights, the icons drawn in the stylesheet) are listed with a
 comment each in `tokens.css`.
 
-Graphite adds a few tokens of its own at the end of `tokens.css`: `--theme-red-pencil`, `--theme-pencil` and its soft and dotted
-variants, `--theme-hatch`, the paper grain (`--theme-paper-grain-opacity` sets how strong it is; 0 turns it off), the scribble
-under titles, the tick, the tape and the three uneven corner shapes. `--theme-title-font` is a handwriting stack; set it to
+Graphite adds a few tokens of its own at the end of `tokens.css`: `--theme-pencil` and its soft and dotted variants,
+`--theme-red-pencil-ink`, `--theme-hatch` and `--theme-crosshatch`, the sketched border image, the row and heading rules and the
+tape. The drawn circles, flags and underline are masks at the top of `flourishes.css`. `--theme-title-font` is a handwriting stack; set it to
 `var(--theme-font)` for plain titles.
 
 What the tokens cannot say is in `graphite/stylesheets/flourishes.css`: the paper, the margin line, the pencil outlines, the
@@ -146,19 +147,18 @@ The handwriting of titles, menus and buttons is not shipped. It is a stack of fo
 
 ## Dark mode
 
-Dark mode follows your system setting (`prefers-color-scheme`): chalk on a charcoal sheet, with a lighter blue for links, the
-grain screened into the page and the tick drawn in chalk. Code blocks stay light, since Redmine's syntax colours are made for a
-light background. To keep Graphite light-only, remove the line `@import url(dark.css);` from
-`graphite/stylesheets/responsive.css`; every dark value is in that one file.
+Dark mode follows your system setting (`prefers-color-scheme`): light chalk-grey lines on a dark graphite sheet, with the primary
+button light and its text dark. Code blocks stay light, since Redmine's syntax colours are made for a light background. To keep
+Graphite light-only, remove the line `@import url(dark.css);` from `graphite/stylesheets/responsive.css`; every dark value is in
+that one file.
 
 ## Accessibility
 
 Text and controls meet WCAG AA in both modes. The page check measures every visible text against the colour behind it on every
-page; the tokens were also measured one by one, including the parts the check cannot see (field borders, outlines, flags), and
-the text that sits straight on the grained paper was measured against the darkest grain pixels. The measured ratios are in
-[docs/accessibility.md](docs/accessibility.md). In short: body text at least 13.4:1 in light and 10.6:1 in dark, secondary
-text at least 10.1:1 and 10.3:1, muted text at least 6.3:1 and 5.9:1 on panels and 4.8:1 and 4.9:1 on the paper, links at least
-7.0:1 and 5.7:1, white on the red pencil 5.6:1, every status chip at least 4.7:1.
+page; the tokens were also measured one by one, including the parts the check cannot see (field borders, outlines, flags). The
+measured ratios are in [docs/accessibility.md](docs/accessibility.md). In short: body text at least 13.2:1 in light and 8.8:1 in
+dark, secondary text at least 10.7:1 and 9.2:1, muted text at least 5.8:1 and 5.2:1, light text on the primary 13.6:1 and 13.9:1,
+every status chip at least 5.1:1.
 
 ## Compatibility
 

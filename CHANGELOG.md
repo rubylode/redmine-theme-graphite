@@ -2,6 +2,36 @@
 
 Notable changes to this theme. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.1.0] - 2026-11-02
+
+### Changed
+
+- The look is a pencil drawing instead of pencil on cream paper: the page is a cool near-white grey in light and dark graphite in dark, with no warm tint and no grain.
+- Every colour in the chrome is a grey. The beige paper, the blue pencil links and the red primary are gone. The one colour left is a muted red for overdue dates and error text.
+- `--theme-primary` is dark graphite (`#2b2b2b`, `#e8e8e8` in dark), so primary buttons, the New issue button and the current page are dark with light text, inverted in dark. It was red.
+- `--theme-accent-0` to `--theme-accent-9` are greys. They were blue, and `--theme-link` is graphite with a pencil underline where it was blue.
+- `--theme-status-*`, `--theme-success`, `--theme-warning` and `--theme-danger` are greys, so status is told apart by the circle, the flag and the word, not by colour.
+- `--theme-focus` is graphite and focus is a dotted outline. Checkboxes and radio buttons are graphite.
+- Buttons, fields, flash messages, the issue card and the sign-in card use a sketched outline: an SVG border image with double strokes, uneven weight and overshooting corners, in `--theme-sketch-border-image`. It replaces the uneven border radius.
+- Shadows are gone: `--theme-shadow-card` is `none`. The issue card and the sign-in card have cross-hatching along two edges instead, and `--theme-shadow-popup` is a hard offset in grey.
+- Table rules and the header rule of lists are drawn strokes (`--theme-row-rule-image`, `--theme-head-rule-image`). The column lines stay dotted.
+- The circle before each subject, the status circle, the priority flag and the tracker square are drawn masks painted in `--theme-pencil`. The status circle for Rejected is filled, and the priority flag is filled for Urgent and Immediate.
+- The scribble under the page title is a pencil stroke drawn by a mask. The tape strip on the issue card is grey.
+- The selected sidebar item is filled with diagonal strokes on the sheet colour.
+- `--theme-pencil-soft` is a solid grey for table rules, where it was a translucent dark. `--theme-radius-*` values are 2px smaller or more, since sketched outlines replace rounded ones.
+- Avatars are one grey. The code block background is a neutral grey.
+- Walkthrough GIFs are about 3 MB each, down from 9 MB, because the page no longer has a texture.
+
+### Removed
+
+- The paper grain and its tokens: `--theme-paper-grain-image`, `--theme-paper-light`, `--theme-paper-blend` and `--theme-paper-grain-opacity`.
+- `--theme-red-pencil`, `--theme-scribble-image`, `--theme-tick-image`, `--theme-tick-filter` and the three `--theme-sketchy-corners*` tokens. `--theme-red-pencil-ink` stays, for overdue dates and error text.
+
+### Added
+
+- `--theme-sketch-border-image`, `--theme-row-rule-image`, `--theme-head-rule-image` and `--theme-crosshatch`, with chalk versions in `dark.css`.
+- Contrast ratios for the new palette in `docs/accessibility.md`: 116 of 116 gated runs clean, lowest text pair 5.08:1.
+
 ## [2.0.0] - 2026-11-02
 
 ### Changed
