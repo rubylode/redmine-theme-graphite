@@ -11,7 +11,7 @@ jobs:
   release:
     runs-on: theme-ci
     env:
-      REDMINE_TAG: "7.0.2"
+      REDMINE_TAG: "7.0.3"
     steps:
       - name: Make sure this runs from a tag
         run: test "$GITHUB_REF_TYPE" = tag || { echo "Choose a tag, not a branch, under Use workflow from"; exit 1; }
