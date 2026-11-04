@@ -2,6 +2,12 @@
 
 <p><img src="docs/thumbnail.png" alt="Rubylode Graphite theme" width="160"></p>
 
+[![check](https://img.shields.io/github/actions/workflow/status/rubylode/redmine-theme-graphite/check.yml?branch=main&label=check)](https://github.com/rubylode/redmine-theme-graphite/actions/workflows/check.yml)
+[![security](https://img.shields.io/github/actions/workflow/status/rubylode/redmine-theme-graphite/security.yml?branch=main&label=security)](https://github.com/rubylode/redmine-theme-graphite/actions/workflows/security.yml)
+[![version](https://img.shields.io/github/v/tag/rubylode/redmine-theme-graphite?sort=semver&label=version)](https://github.com/rubylode/redmine-theme-graphite/tags)
+[![license](https://img.shields.io/github/license/rubylode/redmine-theme-graphite)](https://github.com/rubylode/redmine-theme-graphite/blob/main/LICENSE)
+![Redmine](https://img.shields.io/badge/Redmine-7.0-b22222)
+
 A pencil-drawing theme for Redmine 7 and up: graphite greys on a cool near-white sheet, sketched double-stroke outlines, hatching in place of shadows, handwritten titles, and the project menu as a sidebar on wide screens.
 
 It is plain CSS plus one small script (`javascripts/theme.js`), with no plugin, no build step and no change to Redmine itself.
